@@ -1,22 +1,22 @@
 #include <math.h>
 #include <stdio.h>
+#include "solver.h"
 
-int solver(double a, double b, double c) {
-    extern double root1, root2;
+int solver(double roots[], double a, double b, double c) {
     double D;
     
     D = b * b - 4 * a * c;
     if (a != 0) {
         if (D >= 0) {
-            root1 = (-b - sqrt(D)) / (2 * a);
-            root2 = (-b + sqrt(D)) / (2 * a);
-            return 0; // решилось
+            roots[0] = (-b - sqrt(D)) / (2 * a);
+            roots[1] = (-b + sqrt(D)) / (2 * a);
+            return NORMAL;
         }
         else {
-            return 1; // error -- no real solutions
+            return NOSOL;
         }
     }
     else {
-        return 2; // error -- dividing by zero
+        return NOTSQUARE;
     }
 }
