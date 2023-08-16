@@ -1,4 +1,9 @@
-#define NORMAL 0 // решилось
-#define NOSOL 1 // нет решений
-#define NOTSQUARE 2 // не квадратное уравнение
+enum roots_num {
+    TWO, 
+    SINGLE, 
+    INFINITE, 
+    NO, 
+    ERR, // ошибка
+};
 
+roots_num solver(double roots[], double a, double b, double c);
