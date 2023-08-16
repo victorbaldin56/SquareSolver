@@ -1,21 +1,22 @@
 #include <math.h>
-#include <stdio.h>
 #include "solver.h"
 
-#define PREC 1.0e-10
+#define PREC 1.0e-10 // точность сравнения
 
 // сравнение двух чисел типа double
-static int isEqual(double a, double b) {
+static bool isequal(double a, double b) {
     return fabs(a - b) <= PREC;
 }
 
 roots_num solver(double roots[], double a, double b, double c) {
-    double D;
+    double D = 0;
     
+    if (roots == NULL || isnan(a) || isnan(b) || isnan(c))
+        return ERR;
     D = b * b - 4 * a * c;
-    if (!isEqual(a, 0)) {
+    if (!isequal(a, 0)) {
         if (D >= 0) {
-            if (!isEqual(D, 0)) {
+            if (!isequal(D, 0)) {
                 roots[0] = (-b - sqrt(D)) / (2 * a);
                 roots[1] = (-b + sqrt(D)) / (2 * a);
                 return TWO;
@@ -30,12 +31,12 @@ roots_num solver(double roots[], double a, double b, double c) {
         }
     }
     else {
-        if (!isEqual(b, 0)) {
+        if (!isequal(b, 0)) {
             roots[0] = -c / b;
             return SINGLE;
         }
         else {
-            if (!isEqual(c, 0)) {
+            if (!isequal(c, 0)) {
                 return NO;
             }
             else {

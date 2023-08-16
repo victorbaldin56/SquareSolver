@@ -4,7 +4,8 @@
 int main() {
     double a, b, c;
     double roots[2];
-    
+
+    a = b = c = 0;
     printf("Enter equation coeffitients: ");
     scanf("%lf %lf %lf", &a, &b, &c);
     switch(solver(roots, a, b, c)) {
@@ -21,7 +22,7 @@ int main() {
             printf("No roots\n");
             break;
         case ERR:
-            printf("Error\n");
+            printf("Error: invalid arguments\n");
     }
     return 0;
 }
