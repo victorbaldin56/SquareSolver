@@ -1,9 +1,9 @@
 enum roots_num {
-    TWO, 
-    SINGLE, 
-    INFINITE, 
-    NO, 
-    ERR, // ошибка
+    NO,
+    SINGLE,
+    TWO,
+    INFINITE,
+    ERR = -1, 
 };
 
-roots_num solver(double roots[], double a, double b, double c);
+roots_num solve(double roots[], double a, double b, double c);
