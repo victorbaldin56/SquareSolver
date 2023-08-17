@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <math.h>
 #include "solver.h"
 
 int main() {
-    double a = 0, b = 0, c = 0;
+    double a = NAN, b = NAN, c = NAN;
     double roots[2];
 
     printf("Enter equation coeffitients: ");

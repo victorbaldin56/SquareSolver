@@ -9,7 +9,7 @@ static bool isequal(double a, double b) {
 }
 
 // решение для случая линейного уравнения
-roots_num solveLinear(double roots[], double a, double b, double c) {
+static roots_num solveLinear(double roots[], double a, double b, double c) {
     if (!isequal(b, 0)) {
         roots[0] = -c / b;
         return SINGLE;
@@ -23,7 +23,7 @@ roots_num solveLinear(double roots[], double a, double b, double c) {
 }
 
 // решение для квадратного уравнения
-roots_num solveQuad(double roots[], double a, double b, double c) {
+static roots_num solveQuad(double roots[], double a, double b, double c) {
     double D = b * b - 4 * a * c;
 
     if (D >= 0) {
