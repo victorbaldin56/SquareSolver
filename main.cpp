@@ -6,7 +6,7 @@ int main() {
     double a = NAN, b = NAN, c = NAN;
     double roots[2];
 
-    printf("Enter equation coeffitients: ");
+    printf("Enter equation coeffitients diving with spaces: ");
     scanf("%lf %lf %lf", &a, &b, &c);
     switch(solve(roots, a, b, c)) {
         case TWO:
