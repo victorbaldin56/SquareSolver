@@ -23,6 +23,10 @@ int main() {
             break;
         case ERR:
             printf("Error: invalid arguments\n");
+            break;
+        default:
+            printf("Error: unknown case\n");
+            break;
     }
     return 0;
 }
