@@ -4,7 +4,7 @@
 
 int main() {
     double a = NAN, b = NAN, c = NAN;
-    double roots[2];
+    double roots[2] = {0};
 
     printf("Enter equation coeffitients dividing by spaces: ");
     scanf("%lf %lf %lf", &a, &b, &c);
