@@ -4,10 +4,9 @@
 
 int main() {
     double a = NAN, b = NAN, c = NAN;
-    double roots[2] = {0};
-
     printf("Enter equation coeffitients dividing by spaces: ");
     scanf("%lf %lf %lf", &a, &b, &c);
+    double roots[2] = {NAN};
     switch(solve(roots, a, b, c)) {
         case TWO:
             printf("%g %g\n", roots[0], roots[1]);
@@ -23,10 +22,10 @@ int main() {
             break;
         case ERR:
             printf("Error: invalid arguments\n");
-            break;
+            return -1;
         default:
             printf("Error: unknown case\n");
-            break;
+            return -1;
     }
     return 0;
 }

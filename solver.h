@@ -1,3 +1,6 @@
+#ifndef MY_SOLVER_H
+#define MY_SOLVER_H 1
+
 enum roots_num {
     NO,
     SINGLE,
@@ -7,3 +10,5 @@ enum roots_num {
 };
 
 roots_num solve(double roots[], double a, double b, double c);
+
+#endif // MY_SOLVER_H

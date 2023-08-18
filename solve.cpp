@@ -25,11 +25,11 @@ static roots_num solveLinear(double roots[], double b, double c) {
 // решение для квадратного уравнения
 static roots_num solveQuad(double roots[], double a, double b, double c) {
     double D = b * b - 4 * a * c;
-
     if (D >= 0) {
         if (!isequal(D, 0)) {
-            roots[0] = (-b - sqrt(D)) / (2 * a);
-            roots[1] = (-b + sqrt(D)) / (2 * a);
+            double D1 = sqrt(D);
+            roots[0] = (-b - D1) / (2 * a);
+            roots[1] = (-b + D1) / (2 * a);
             return TWO;
         }
         else {
