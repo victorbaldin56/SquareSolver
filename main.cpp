@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[]) {
     if (argc == 2 && !strcmp("test", argv[1])) {
-        // запуск тестирования
+        // запуск в режиме тестирования
         return test();
     }
     double a = NAN, b = NAN, c = NAN;

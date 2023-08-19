@@ -4,7 +4,7 @@
 // сравнение двух чисел типа double
 bool isequal(double a, double b) {
     const double prec = 1.0e-10; // точность сравнения
-    return fabs(a - b) <= prec;
+    return (fabs(a - b) <= prec) || (isnan(a) && isnan(b));
 }
 
 // решение для случая линейного уравнения

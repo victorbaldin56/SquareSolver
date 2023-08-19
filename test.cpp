@@ -12,8 +12,9 @@ int test() {
     int test_ans = 0; // правильное число корней, которое должна вернуть функция solve
     int ans = 0; // возращаемый результат
     int test_no = 0; // номер теста
-    int res = 1; // результат теста
+    int res = 0; // результат теста
     printf("Test\tStatus\n");
+    
     while (fscanf(fp, "%lf,%lf,%lf,%lf,%lf,%d", &a, &b, &c, &test_roots[0], &test_roots[1], &test_ans) == 6) {
         ans = solve(roots, a, b, c);
         test_no++;
@@ -22,10 +23,10 @@ int test() {
         }
         else {
             printf("%4d\t%6s\n", test_no, FAIL);
+            res = -1;
         }
     }
-    if (!res)
-        return -1;
+    
     fclose(fp);
-    return 0;
+    return res;
 }
