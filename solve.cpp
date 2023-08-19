@@ -25,20 +25,34 @@ static roots_num solveLinear(double roots[], double b, double c) {
 // решение для квадратного уравнения
 static roots_num solveQuad(double roots[], double a, double b, double c) {
     double D = b * b - 4 * a * c;
-    if (D >= 0) {
-        if (!isequal(D, 0)) {
-            double D1 = sqrt(D);
-            roots[0] = (-b - D1) / (2 * a);
-            roots[1] = (-b + D1) / (2 * a);
-            return TWO;
+    if (!isequal(b, 0)) {
+        if (D >= 0) {
+            if (!isequal(D, 0)) {
+                double D1 = sqrt(D);
+                roots[0] = (-b - D1) / (2 * a);
+                roots[1] = (-b + D1) / (2 * a);
+                return TWO;
+            }
+            else {
+                roots[0] = -b / (2 * a);
+                return SINGLE;
+            }
         }
         else {
-            roots[0] = -b / (2 * a);
-            return SINGLE;
+            return NO;
         }
     }
     else {
-        return NO;
+        // оптимизация для случая нулевого свободного коэффициента
+        if (!isequal(b, 0)) {
+            solveLinear(roots, a, b);
+            roots[1] = 0;
+            return TWO;
+        }
+        else {
+            roots[0] = 0;
+            return SINGLE;
+        }
     }
 }
 
