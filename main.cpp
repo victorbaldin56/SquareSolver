@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #include "solver.h"
 
-int main() {
+int main(int argc, char *argv[]) {
+    if (argc == 2 && !strcmp("test", argv[1])) {
+        // запуск тестирования
+        return test();
+    }
     double a = NAN, b = NAN, c = NAN;
     printf("Enter equation coeffitients dividing by spaces: ");
     scanf("%lf %lf %lf", &a, &b, &c);

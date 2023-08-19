@@ -1,10 +1,9 @@
 #include <math.h>
 #include "solver.h"
 
-const double prec = 1.0e-10; // точность сравнения
-
 // сравнение двух чисел типа double
-static bool isequal(double a, double b) {
+bool isequal(double a, double b) {
+    const double prec = 1.0e-10; // точность сравнения
     return fabs(a - b) <= prec;
 }
 

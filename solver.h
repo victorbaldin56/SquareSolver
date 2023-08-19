@@ -10,5 +10,7 @@ enum roots_num {
 };
 
 roots_num solve(double roots[], double a, double b, double c);
+bool isequal(double a, double b);
+int test();
 
 #endif // MY_SOLVER_H
