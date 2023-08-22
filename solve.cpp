@@ -8,7 +8,13 @@ bool isequal(double a, double b) {
     return (fabs(a - b) <= prec) || (isnan(a) && isnan(b));
 }
 
-// решение для случая линейного уравнения
+/**
+ * Case of linear equation b*x+c=0
+ * @param roots array of roots
+ * @param b first coef
+ * @param c second coef
+ * @return the number of roots or error code -1
+*/
 static int solve_linear(double roots[], const double b, const double c) {
     if (!isequal(b, 0)) {
         roots[0] = -c / b;
@@ -27,7 +33,6 @@ static int solve_linear(double roots[], const double b, const double c) {
     }
 }
 
-// решение для квадратного уравнения
 static int solve_quad(double roots[], const double a, const double b, const double c) {
     double D = b * b - 4 * a * c;
     if (!isequal(b, 0)) {
