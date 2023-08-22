@@ -6,8 +6,8 @@
 int solve_test() {
     FILE *fp = fopen("test_values.csv", "r"); // чтение файла с тестовыми значениями
     double a = NAN, b = NAN, c = NAN;
-    double roots[2] = {NAN};                  // массив корней, который заполняется функцией solve
-    double valid_roots[2] = {NAN};            // конрольные значения корней, полученные из файла
+    double roots[2] = {NAN, NAN};                  // массив корней, который заполняется функцией solve
+    double valid_roots[2] = {NAN, NAN};            // конрольные значения корней, полученные из файла
     int ans = 0;                              // возвращаемое значение функции solve
     int valid_ans = 0;                        // контрольное значение функции solve
     int res = 0;                              // результат тестирования

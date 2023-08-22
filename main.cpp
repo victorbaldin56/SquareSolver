@@ -5,6 +5,14 @@
 
 #define MAXLEN 1000 // max lenght of compared strings
 
+// clears input buffer
+static void clear_buf() {
+    int c = 0;
+    while (c != '\n') {
+        c = getchar();
+    }
+}
+
 int main(int argc, char *argv[]) {
     printf("# Square equation solver\n"
            "# (c) Victor Baldin, 2023\n");
@@ -17,12 +25,13 @@ int main(int argc, char *argv[]) {
 
     double a = NAN, b = NAN, c = NAN;
     printf("# Enter equation coeffitients dividing by spaces: ");
-    if (scanf("%lf %lf %lf", &a, &b, &c) != 3) {
-        printf("Input error\n"); // retry
-        return -1;
+    
+    while(scanf("%lf %lf %lf", &a, &b, &c) != 3) {
+        clear_buf();
+        printf("Wrong input, try again\n"); // retry
     }
 
-    double roots[2] = {NAN};
+    double roots[2] = {NAN, NAN};
     switch(solve(roots, a, b, c)) {
         case 2:
             printf("Roots: %g %g\n", roots[0], roots[1]);
