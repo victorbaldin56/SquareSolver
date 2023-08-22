@@ -18,6 +18,10 @@ bool is_equal(double a, double b) {
 */
 static int solve_linear(double roots[], const double b, const double c) {
 
+    assert(std::isfinite(b));
+    assert(std::isfinite(c));
+    assert(roots != NULL);
+
     if (!is_equal(b, 0)) {
         roots[0] = -c / b;
         roots[1] = NAN;
@@ -36,6 +40,12 @@ static int solve_linear(double roots[], const double b, const double c) {
 }
 
 static int solve_quad(double roots[], const double a, const double b, const double c) {
+    
+    assert(std::isfinite(a));
+    assert(std::isfinite(b));
+    assert(std::isfinite(c));
+    assert(roots != NULL);
+
     double D = b * b - 4 * a * c;
     if (!is_equal(b, 0)) {
         if (D >= 0) {
@@ -71,10 +81,11 @@ static int solve_quad(double roots[], const double a, const double b, const doub
 }
 
 int solve(double roots[], double a, double b, double c) {
+
     if (!isfinite(a) || !isfinite(b) || !isfinite(c))
         return ERROR;
     if (roots == NULL)
-        return ERROR; //Name error
+        return ERROR; 
 
     if (!is_equal(a, 0))
         return solve_quad(roots, a, b, c);
