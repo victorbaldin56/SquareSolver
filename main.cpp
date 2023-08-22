@@ -9,13 +9,17 @@ int main(int argc, char *argv[]) {
     
     if (argc == 2 && !strcmp("test", argv[1])) {
         // запуск в режиме тестирования
-        printf("# Running test \n");
+        printf("# Running test\n");
         return solve_test();
     }
 
     double a = NAN, b = NAN, c = NAN;
     printf("# Enter equation coeffitients dividing by spaces: ");
-    scanf("%lf %lf %lf", &a, &b, &c);//? Find in doc what scanf do not change value
+    if (scanf("%lf %lf %lf", &a, &b, &c) != 3) {
+        printf("Input error\n");
+        return -1;
+    }
+
     double roots[2] = {NAN};
     switch(solve(roots, a, b, c)) {
         case 2:
