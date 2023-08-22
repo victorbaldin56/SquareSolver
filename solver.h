@@ -9,8 +9,8 @@ enum roots_num {
     ERR = -1, 
 };
 
-roots_num solve(double roots[], double a, double b, double c);
+roots_num solve(double roots[], const double a, const double b, const double c);
 bool isequal(double a, double b);
-int test();
+int solve_test();
 
 #endif // MY_SOLVER_H

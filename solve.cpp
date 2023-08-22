@@ -1,4 +1,5 @@
 #include <math.h>
+#include <cassert>
 #include "solver.h"
 
 // сравнение двух чисел типа double
@@ -8,7 +9,7 @@ bool isequal(double a, double b) {
 }
 
 // решение для случая линейного уравнения
-static roots_num solveLinear(double roots[], double b, double c) {
+static roots_num solveLinear(double roots[], const double b, const double c) {
     if (!isequal(b, 0)) {
         roots[0] = -c / b;
         return SINGLE;
@@ -22,7 +23,7 @@ static roots_num solveLinear(double roots[], double b, double c) {
 }
 
 // решение для квадратного уравнения
-static roots_num solveQuad(double roots[], double a, double b, double c) {
+static roots_num solveQuad(double roots[], const double a, const double b, const double c) {
     double D = b * b - 4 * a * c;
     if (!isequal(b, 0)) {
         if (D >= 0) {
@@ -57,10 +58,11 @@ static roots_num solveQuad(double roots[], double a, double b, double c) {
 
 // ветвление на случаи и фиксация ошибок входных параметров
 roots_num solve(double roots[], double a, double b, double c) {
-    if (roots == NULL)
-        return ERR;
-    if (!isfinite(a) || !isfinite(b) || !isfinite(c))
-        return ERR;
+    assert(std::isfinite(a));
+    assert(std::isfinite(b));
+    assert(std::isfinite(c));
+    assert(roots != NULL);
+    
     if (!isequal(a, 0))
         return solveQuad(roots, a, b, c);
     else
