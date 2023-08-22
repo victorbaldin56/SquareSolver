@@ -3,11 +3,13 @@
 #include <string.h>
 #include "solver.h"
 
+#define MAXLEN 1000 // max lenght of compared strings
+
 int main(int argc, char *argv[]) {
     printf("# Square equation solver\n"
            "# (c) Victor Baldin, 2023\n");
     
-    if (argc == 2 && !strcmp("test", argv[1])) {
+    if (argc == 2 && !strncmp("test", argv[1], MAXLEN)) {
         // запуск в режиме тестирования
         printf("# Running test\n");
         return solve_test();
@@ -16,7 +18,7 @@ int main(int argc, char *argv[]) {
     double a = NAN, b = NAN, c = NAN;
     printf("# Enter equation coeffitients dividing by spaces: ");
     if (scanf("%lf %lf %lf", &a, &b, &c) != 3) {
-        printf("Input error\n");
+        printf("Input error\n"); // retry
         return -1;
     }
 
@@ -26,7 +28,7 @@ int main(int argc, char *argv[]) {
             printf("Roots: %g %g\n", roots[0], roots[1]);
             break;
         case 1:
-            printf("Root: %g %g\n", roots[0], roots[1]);
+            printf("Root: %g\n", roots[0]);
             break;
         case INFINITE:
             printf("Infinite number of roots\n");

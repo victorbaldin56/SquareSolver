@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SqSolve: solver.h Source File</title>
+<title>Square equation: solver.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">SqSolve
+   <div id="projectname">Square equation
    </div>
   </td>
  </tr>
@@ -77,22 +77,20 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">solver.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="solver_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MY_SOLVER_H</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MY_SOLVER_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MY_SOLVER_H 1</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="solver_8h.html#ae831e56053b8abc343b931bc11a63be4">    4</a></span><span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="solver_8h.html#ae831e56053b8abc343b931bc11a63be4">INFINITE</a> = 3; <span class="comment">// бесконечное число корней</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">const</span> <span class="keywordtype">int</span> INFINITE = 3; <span class="comment">// бесконечное число корней</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">const</span> <span class="keywordtype">int</span> ERROR = -1; <span class="comment">// ошибка</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">int</span> <a class="code hl_function" href="solver_8h.html#a3d11d888edc9d568b8b7a0c4f75e8569">solve</a>(<span class="keywordtype">double</span> roots[], <span class="keyword">const</span> <span class="keywordtype">double</span> a, <span class="keyword">const</span> <span class="keywordtype">double</span> b, <span class="keyword">const</span> <span class="keywordtype">double</span> c);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">bool</span> <a class="code hl_function" href="solver_8h.html#a69e45bdefacf24536533958e9475eeb3">isequal</a>(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">int</span> <a class="code hl_function" href="solver_8h.html#acef4122e6a3bec867e9d0d2449c8cf1f">solve_test</a>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif </span><span class="comment">// MY_SOLVER_H</span></div>
-<div class="ttc" id="asolver_8h_html_a3d11d888edc9d568b8b7a0c4f75e8569"><div class="ttname"><a href="solver_8h.html#a3d11d888edc9d568b8b7a0c4f75e8569">solve</a></div><div class="ttdeci">int solve(double roots[], const double a, const double b, const double c)</div><div class="ttdef"><b>Definition</b> solve.cpp:66</div></div>
-<div class="ttc" id="asolver_8h_html_a69e45bdefacf24536533958e9475eeb3"><div class="ttname"><a href="solver_8h.html#a69e45bdefacf24536533958e9475eeb3">isequal</a></div><div class="ttdeci">bool isequal(double a, double b)</div><div class="ttdef"><b>Definition</b> solve.cpp:6</div></div>
-<div class="ttc" id="asolver_8h_html_acef4122e6a3bec867e9d0d2449c8cf1f"><div class="ttname"><a href="solver_8h.html#acef4122e6a3bec867e9d0d2449c8cf1f">solve_test</a></div><div class="ttdeci">int solve_test()</div><div class="ttdef"><b>Definition</b> solve_test.cpp:6</div></div>
-<div class="ttc" id="asolver_8h_html_ae831e56053b8abc343b931bc11a63be4"><div class="ttname"><a href="solver_8h.html#ae831e56053b8abc343b931bc11a63be4">INFINITE</a></div><div class="ttdeci">const int INFINITE</div><div class="ttdef"><b>Definition</b> solver.h:4</div></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">int</span> solve(<span class="keywordtype">double</span> roots[], <span class="keyword">const</span> <span class="keywordtype">double</span> a, <span class="keyword">const</span> <span class="keywordtype">double</span> b, <span class="keyword">const</span> <span class="keywordtype">double</span> c);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">bool</span> is_equal(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">int</span> solve_test();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">// MY_SOLVER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

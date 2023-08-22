@@ -15,14 +15,14 @@ int solve_test() {
     while (!feof(fp)) {
         int n_arg = fscanf(fp, "%lf,%lf,%lf,%lf,%lf,%d", 
                 &a, &b, &c, &valid_roots[0], &valid_roots[1], &valid_ans);
-        if (n_arg != 6 && n_arg != 0) {
+        if (n_arg != 6 && n_arg != EOF) {
             printf("Invalid test values\n");
             return -1;
         }
         else {
             ans = solve(roots, a, b, c);
-            if (isequal(roots[0], valid_roots[0]) && isequal(roots[1], valid_roots[1]) && 
-                    (ans == valid_ans)) {
+            if (ans == valid_ans &&
+                    is_equal(roots[0], valid_roots[0]) && is_equal(roots[1], valid_roots[1])) {
                 printf("OK\n");
                 continue;
             }
