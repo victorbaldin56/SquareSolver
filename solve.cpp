@@ -4,26 +4,31 @@
 
 // сравнение двух чисел типа double
 bool isequal(double a, double b) {
-    const double prec = 1.0e-10; // точность сравнения
-    return fabs(a - b) <= prec;
+    const double prec = 1.0e-7; // точность сравнения
+    return (fabs(a - b) <= prec) || (isnan(a) && isnan(b));
 }
 
 // решение для случая линейного уравнения
-static roots_num solveLinear(double roots[], const double b, const double c) {
+static int solveLinear(double roots[], const double b, const double c) {
     if (!isequal(b, 0)) {
         roots[0] = -c / b;
-        return SINGLE;
+        roots[1] = NAN;
+        return 1;
     }
     else {
-        if (!isequal(c, 0))
-            return NO;
-        else
+        if (!isequal(c, 0)) {
+            roots[0] = roots[1] = NAN;
+            return 0;
+        }
+        else {
+            roots[0] = roots[1] = NAN;
             return INFINITE;
+        }
     }
 }
 
 // решение для квадратного уравнения
-static roots_num solveQuad(double roots[], const double a, const double b, const double c) {
+static int solveQuad(double roots[], const double a, const double b, const double c) {
     double D = b * b - 4 * a * c;
     if (!isequal(b, 0)) {
         if (D >= 0) {
@@ -31,15 +36,17 @@ static roots_num solveQuad(double roots[], const double a, const double b, const
                 double D1 = sqrt(D);
                 roots[0] = (-b - D1) / (2 * a);
                 roots[1] = (-b + D1) / (2 * a);
-                return TWO;
+                return 2;
             }
             else {
                 roots[0] = -b / (2 * a);
-                return SINGLE;
+                roots[1] = NAN;
+                return 1;
             }
         }
         else {
-            return NO;
+            roots[0] = roots[1] = NAN;
+            return 0;
         }
     }
     else {
@@ -47,22 +54,22 @@ static roots_num solveQuad(double roots[], const double a, const double b, const
         if (!isequal(b, 0)) {
             solveLinear(roots, a, b);
             roots[1] = 0;
-            return TWO;
+            return 2;
         }
         else {
             roots[0] = 0;
-            return SINGLE;
+            return 1;
         }
     }
 }
 
 // ветвление на случаи и фиксация ошибок входных параметров
-roots_num solve(double roots[], double a, double b, double c) {
+int solve(double roots[], double a, double b, double c) {
     assert(std::isfinite(a));
     assert(std::isfinite(b));
     assert(std::isfinite(c));
     assert(roots != NULL);
-    
+
     if (!isequal(a, 0))
         return solveQuad(roots, a, b, c);
     else
