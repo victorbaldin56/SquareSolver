@@ -63,7 +63,6 @@ static int solve_quad(double roots[], const double a, const double b, const doub
     }
 }
 
-// ветвление на случаи и фиксация ошибок входных параметров
 int solve(double roots[], double a, double b, double c) {
     if (!isfinite(a) || !isfinite(b) || !isfinite(c))
         return -1;
