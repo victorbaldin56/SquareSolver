@@ -13,9 +13,9 @@ int solve_test() {
     int res = 0;                              // результат тестирования
 
     while (!feof(fp)) {
-        int nArg = fscanf(fp, "%lf,%lf,%lf,%lf,%lf,%d", 
+        int n_arg = fscanf(fp, "%lf,%lf,%lf,%lf,%lf,%d", 
                 &a, &b, &c, &valid_roots[0], &valid_roots[1], &valid_ans);
-        if (nArg != 6) {
+        if (n_arg != 6 && n_arg != 0) {
             printf("Invalid test values\n");
             return -1;
         }
@@ -27,8 +27,8 @@ int solve_test() {
                 continue;
             }
             else {
-                printf("Test failed on values: a = %g, b = %g, c = %g, x1 = %g, "
-                    "x2 = %g\n", a, b, c, valid_roots[0], valid_roots[1]);
+                printf("Test failed on values: a = %g, b = %g, c = %g\n",
+                                               a, b, c);
                 res = -1;
             }
         }
