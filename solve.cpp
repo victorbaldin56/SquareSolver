@@ -9,7 +9,7 @@ bool isequal(double a, double b) {
 }
 
 // решение для случая линейного уравнения
-static int solveLinear(double roots[], const double b, const double c) {
+static int solve_linear(double roots[], const double b, const double c) {
     if (!isequal(b, 0)) {
         roots[0] = -c / b;
         roots[1] = NAN;
@@ -28,7 +28,7 @@ static int solveLinear(double roots[], const double b, const double c) {
 }
 
 // решение для квадратного уравнения
-static int solveQuad(double roots[], const double a, const double b, const double c) {
+static int solve_quad(double roots[], const double a, const double b, const double c) {
     double D = b * b - 4 * a * c;
     if (!isequal(b, 0)) {
         if (D >= 0) {
@@ -52,7 +52,7 @@ static int solveQuad(double roots[], const double a, const double b, const doubl
     else {
         // оптимизация для случая нулевого свободного коэффициента
         if (!isequal(b, 0)) {
-            solveLinear(roots, a, b);
+            solve_linear(roots, a, b);
             roots[1] = 0;
             return 2;
         }
@@ -65,13 +65,13 @@ static int solveQuad(double roots[], const double a, const double b, const doubl
 
 // ветвление на случаи и фиксация ошибок входных параметров
 int solve(double roots[], double a, double b, double c) {
-    assert(std::isfinite(a));
-    assert(std::isfinite(b));
-    assert(std::isfinite(c));
-    assert(roots != NULL);
+    if (!isfinite(a) || !isfinite(b) || !isfinite(c))
+        return -1;
+    if (roots == NULL)
+        return -1;
 
     if (!isequal(a, 0))
-        return solveQuad(roots, a, b, c);
+        return solve_quad(roots, a, b, c);
     else
-        return solveLinear(roots, b, c);
+        return solve_linear(roots, b, c);
 }
