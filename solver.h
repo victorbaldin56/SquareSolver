@@ -34,7 +34,6 @@ int ss_test(FILE *test_file);
 /**
  * clears input buffer
 */
-void clear_buf();
 
 /**
  * 

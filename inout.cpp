@@ -1,21 +1,16 @@
 #include <stdio.h>
 #include "solver.h"
 
-void clear_buf() {
-    int c = 0;
-    while (c != '\n') {
-        c = getchar();
-    }
-}
+static void clear_buf();
 
 void input_coeffs(double* a, double* b, double* c) {
     printf("Enter a, b, c: ");
 
-    while(scanf("%lf %lf %lf", a, b, c) != 3) { // EOF?
+    while (scanf("%lf %lf %lf", a, b, c) != 3) { // EOF?
         clear_buf();
         printf("Wrong input, try again\n"); // retry
     }
-
+    
 }
 
 void print_roots(double roots[], const double a, const double b, const double c) {
@@ -37,4 +32,11 @@ void print_roots(double roots[], const double a, const double b, const double c)
             printf("Error: unknown case\n");
     }
 
+}
+
+static void clear_buf() {
+    int c = 0;
+    while (c != '\n') {
+        c = getchar();
+    }
 }
