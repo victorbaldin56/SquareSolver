@@ -15,7 +15,8 @@ int main(int argc, char *argv[]) {
     if (argc == 2 && !strncmp("--test", argv[1], MAXLEN)) {
         // запуск в режиме тестирования
         printf("# Running test\n");
-        return solve_test();
+        FILE *test_file = fopen("test_values.csv", "r");
+        return solve_test(test_file);
     }
 
     double a = NAN, b = NAN, c = NAN;

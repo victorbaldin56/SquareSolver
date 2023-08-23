@@ -1,6 +1,8 @@
 #ifndef MY_SOLVER_H
 #define MY_SOLVER_H 1
 
+#include <stdio.h>
+
 const int INFINITE = 3; // бесконечное число корней
 const int ERROR = -1; // ошибка
 
@@ -24,11 +26,10 @@ int solve_square(double roots[], const double a, const double b, const double c)
 bool is_equal(double a, double b);
 
 /**
- * Unit test for solve_square().
- * Reads csv file with valid values.
- * Test file must contain the first "a,b,c,root1,root2,ans" string as a header.
- * @return 0 if success, -1 if test failed
+ * Tests solve_square until the end of test file
+ * @param test_file pointer to the file with reference values
+ * @return -1 in case of error, otherwise 0
 */
-int solve_test();
+int solve_test(FILE *test_file);
 
 #endif // MY_SOLVER_H
