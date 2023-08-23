@@ -22,13 +22,17 @@ int ss_test(FILE *test_file) {
     int num = 0; // test number
     int succeed = 0; // number of succeed tests
 
-    fscanf(test_file, "a,b,c,root1,root2,ans");           // проверка на наличие пояснений в test_file
+    fscanf(test_file, "a,b,c,root1,root2,ans");
     
     while (!feof(test_file)) {
         int n_arg = fscanf(test_file, "%lf, %lf, %lf, %lf, %lf, %d",
-                                &a, &b, &c, &roots_ref[0], &roots_ref[1], &nroots_ref);
+                                &a, &b, &c, &roots_ref[0], &roots_ref[1], &nroots_ref); //\n in end of file
         
-        if (n_arg != 6 && n_arg != EOF) {
+        if (n_arg == EOF) {
+            break;
+        }
+
+        if (n_arg != 6) {
             printf("wrong input in test file\n");
             return -1;
         };
@@ -53,8 +57,8 @@ static int run_test(double a, double b, double c, double roots_ref[], int nroots
     if (!is_equal(roots[0], roots_ref[0]) || !is_equal(roots[1], roots_ref[1]) || 
                   nroots != nroots_ref) {
         printf("TEST %d FAILED: a = %g, b = %g, c = %g\n"
-                "Roots: %g, %g, number of roots: %d\n"
-                "Expected: %g, %g, %d\n",
+               "Received: %g, %g, %d\n" 
+               "Expected: %g, %g, %d\n",
                 num, a, b, c, roots[0], roots[1], nroots, 
                 roots_ref[0], roots_ref[1], nroots_ref);
         return -1;

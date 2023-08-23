@@ -2,8 +2,8 @@
 #include <cassert>
 #include "solver.h"
 
-// How many NaN exist
-
+// How many NaN exist --answered
+// Color output. 
 /**
  * Case of linear equation b*x+c=0
  * @param roots array of roots

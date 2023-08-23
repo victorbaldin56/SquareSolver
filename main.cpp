@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
     printf("# Square equation solver\n"
            "# (c) Victor Baldin, 2023\n");
     
-    if (argc == 2 && !strncmp("--test", argv[1], MAXLEN)) {
+    if (argc == 2 && !strncmp("--test", argv[1], MAXLEN)) { // key --help , --test filename 
         // run tests
         printf("# Running test\n");
         FILE *test_file = fopen("test_values.csv", "r");
