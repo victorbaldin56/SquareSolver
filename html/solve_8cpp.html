@@ -137,13 +137,13 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>1 if close enough, 0 if not <br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="solve_8cpp_source.html#l00018">18</a> of file <a class="el" href="solve_8cpp_source.html">solve.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>                                  {</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> prec = 1.0e-7; <span class="comment">// точность сравнения</span></div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> (fabs(a - b) &lt;= prec) || (isnan(a) &amp;&amp; isnan(b));</div>
-<div class="line"><span class="lineno">   21</span>}</div>
+<p class="definition">Definition at line <a class="el" href="solve_8cpp_source.html#l00025">25</a> of file <a class="el" href="solve_8cpp_source.html">solve.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>                                  {</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> prec = 1.0e-7; <span class="comment">// точность сравнения</span></div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> (fabs(a - b) &lt;= prec) || (isnan(a) &amp;&amp; isnan(b));</div>
+<div class="line"><span class="lineno">   28</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="solve_8cpp_source.html#l00023">solve_square()</a>, and <a class="el" href="solve__test_8cpp_source.html#l00006">solve_test()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="solve_8cpp_source.html#l00030">solve_square()</a>, and <a class="el" href="solve__test_8cpp_source.html#l00006">solve_test()</a>.</p>
 
 </div>
 </div>
@@ -195,25 +195,25 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the number of roots or error code -1 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="solve_8cpp_source.html#l00023">23</a> of file <a class="el" href="solve_8cpp_source.html">solve.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                               {</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (!isfinite(a) || !isfinite(b) || !isfinite(c))</div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="solver_8h.html#ac9bcbe19995a8140cd4ec61773cd6e67">ERROR</a>;</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (roots == NULL)</div>
-<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="solver_8h.html#ac9bcbe19995a8140cd4ec61773cd6e67">ERROR</a>; </div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="solve_8cpp.html#a8fd312984962992d16840d50fd38304d">is_equal</a>(a, 0))</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">return</span> do_solve_quad(roots, a, b, c);</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> do_solve_linear(roots, b, c);</div>
-<div class="line"><span class="lineno">   34</span>}</div>
-<div class="ttc" id="asolve_8cpp_html_a8fd312984962992d16840d50fd38304d"><div class="ttname"><a href="solve_8cpp.html#a8fd312984962992d16840d50fd38304d">is_equal</a></div><div class="ttdeci">bool is_equal(double a, double b)</div><div class="ttdef"><b>Definition</b> <a href="solve_8cpp_source.html#l00018">solve.cpp:18</a></div></div>
+<p class="definition">Definition at line <a class="el" href="solve_8cpp_source.html#l00030">30</a> of file <a class="el" href="solve_8cpp_source.html">solve.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>                                                               {</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (!isfinite(a) || !isfinite(b) || !isfinite(c))</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="solver_8h.html#ac9bcbe19995a8140cd4ec61773cd6e67">ERROR</a>;</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (roots == NULL)</div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="solver_8h.html#ac9bcbe19995a8140cd4ec61773cd6e67">ERROR</a>; </div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="solve_8cpp.html#a8fd312984962992d16840d50fd38304d">is_equal</a>(a, 0))</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">return</span> do_solve_quad(roots, a, b, c);</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">return</span> do_solve_linear(roots, b, c);</div>
+<div class="line"><span class="lineno">   41</span>}</div>
+<div class="ttc" id="asolve_8cpp_html_a8fd312984962992d16840d50fd38304d"><div class="ttname"><a href="solve_8cpp.html#a8fd312984962992d16840d50fd38304d">is_equal</a></div><div class="ttdeci">bool is_equal(double a, double b)</div><div class="ttdef"><b>Definition</b> <a href="solve_8cpp_source.html#l00025">solve.cpp:25</a></div></div>
 <div class="ttc" id="asolver_8h_html_ac9bcbe19995a8140cd4ec61773cd6e67"><div class="ttname"><a href="solver_8h.html#ac9bcbe19995a8140cd4ec61773cd6e67">ERROR</a></div><div class="ttdeci">const int ERROR</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00005">solver.h:5</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="solver_8h_source.html#l00005">ERROR</a>, and <a class="el" href="solve_8cpp_source.html#l00018">is_equal()</a>.</p>
+<p class="reference">References <a class="el" href="solver_8h_source.html#l00005">ERROR</a>, and <a class="el" href="solve_8cpp_source.html#l00025">is_equal()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00016">main()</a>, and <a class="el" href="solve__test_8cpp_source.html#l00006">solve_test()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00011">main()</a>, and <a class="el" href="solve__test_8cpp_source.html#l00006">solve_test()</a>.</p>
 
 </div>
 </div>

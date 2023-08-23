@@ -23,6 +23,12 @@ int solve_square(double roots[], const double a, const double b, const double c)
 */
 bool is_equal(double a, double b);
 
+/**
+ * Unit test for solve_square().
+ * Reads csv file with valid values.
+ * Test file must contain the first "a,b,c,root1,root2,ans" string as a header.
+ * @return 0 if success, -1 if test failed
+*/
 int solve_test();
 
 #endif // MY_SOLVER_H
