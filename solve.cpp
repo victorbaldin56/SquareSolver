@@ -4,9 +4,26 @@
 
 // How many NaN exist
 
+static int solve_linear(double roots[], const double b, const double c);
+
+static int solve_quad(double roots[], const double a, const double b, const double c);
+
 bool is_equal(double a, double b) {
     const double prec = 1.0e-7; // точность сравнения
     return (fabs(a - b) <= prec) || (isnan(a) && isnan(b));
+}
+
+int solve_square(double roots[], double a, double b, double c) {
+
+    if (!isfinite(a) || !isfinite(b) || !isfinite(c))
+        return ERROR;
+    if (roots == NULL)
+        return ERROR; 
+
+    if (!is_equal(a, 0))
+        return solve_quad(roots, a, b, c);
+    else
+        return solve_linear(roots, b, c);
 }
 
 /**
@@ -78,17 +95,4 @@ static int solve_quad(double roots[], const double a, const double b, const doub
             return 1;
         }
     }
-}
-
-int solve(double roots[], double a, double b, double c) {
-
-    if (!isfinite(a) || !isfinite(b) || !isfinite(c))
-        return ERROR;
-    if (roots == NULL)
-        return ERROR; 
-
-    if (!is_equal(a, 0))
-        return solve_quad(roots, a, b, c);
-    else
-        return solve_linear(roots, b, c);
 }

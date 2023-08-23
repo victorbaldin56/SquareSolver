@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
     printf("# Square equation solver\n"
            "# (c) Victor Baldin, 2023\n");
     
-    if (argc == 2 && !strncmp("test", argv[1], MAXLEN)) {
+    if (argc == 2 && !strncmp("--test", argv[1], MAXLEN)) {
         // запуск в режиме тестирования
         printf("# Running test\n");
         return solve_test();
@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     }
 
     double roots[2] = {NAN, NAN};
-    switch(solve(roots, a, b, c)) {
+    switch(solve_square(roots, a, b, c)) {
         case 2:
             printf("Roots: %g %g\n", roots[0], roots[1]);
             break;

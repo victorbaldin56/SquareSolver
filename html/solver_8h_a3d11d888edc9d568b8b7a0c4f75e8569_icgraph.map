@@ -1,8 +1,0 @@
-<map id="solve" name="solve">
-<area shape="rect" id="Node000001" title=" " alt="" coords="245,5,303,31"/>
-<area shape="rect" id="Node000002" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,21,60,21,60,15,232,15"/>
-<area shape="rect" id="Node000003" href="$solve__test_8cpp.html#acef4122e6a3bec867e9d0d2449c8cf1f" title=" " alt="" coords="108,31,197,56"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="232,29,198,37,197,31,231,24"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="94,34,60,26,61,21,95,28"/>
-</map>

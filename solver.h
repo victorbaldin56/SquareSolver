@@ -13,7 +13,7 @@ const int ERROR = -1; // ошибка
  * @param c third coef
  * @return the number of roots of error code -1 
 */
-int solve(double roots[], const double a, const double b, const double c);
+int solve_square(double roots[], const double a, const double b, const double c);
 
 /**
  * Two doubles comparison
