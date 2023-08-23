@@ -15,7 +15,7 @@ static int do_solve_linear(double roots[], const double b, const double c);
 
 /**
  * Case of quadratic equation
- * @param a first coef, a!=0
+ * @param a first coef, a must not be zero!
  * @param b second coef
  * @param c third coef
  * @return number of roots
