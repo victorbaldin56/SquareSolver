@@ -31,4 +31,19 @@ bool is_equal(double a, double b);
 */
 int ss_test(FILE *test_file);
 
+/**
+ * clears input buffer
+*/
+void clear_buf();
+
+/**
+ * 
+*/
+void input_coeffs(double* a, double* b, double* c);
+
+/**
+ * 
+*/
+void print_roots(double roots[], const double a, const double b, const double c);
+
 #endif // MY_SOLVER_H

@@ -27,7 +27,7 @@ bool is_equal(double a, double b) {
     return (fabs(a - b) <= prec) || (isnan(a) && isnan(b));
 }
 
-int solve_square(double roots[], double a, double b, double c) {
+int solve_square(double roots[], const double a, const double b, const double c) {
     if (!isfinite(a) || !isfinite(b) || !isfinite(c)) {
         return ERROR;
     }
@@ -44,8 +44,8 @@ int solve_square(double roots[], double a, double b, double c) {
 }
 
 static int do_solve_linear(double roots[], const double b, const double c) {
-    assert(std::isfinite(b));
-    assert(std::isfinite(c));
+    assert(isfinite(b));
+    assert(isfinite(c));
     assert(roots != NULL);
 
     if (is_equal(b, 0)) {
@@ -70,9 +70,9 @@ static int do_solve_linear(double roots[], const double b, const double c) {
 }
 
 static int do_solve_quad(double roots[], const double a, const double b, const double c) {
-    assert(std::isfinite(a));
-    assert(std::isfinite(b));
-    assert(std::isfinite(c));
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(c));
     assert(roots != NULL);
 
     if (is_equal(c, 0)) {
