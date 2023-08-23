@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]]
+  ['print_5froots_0',['print_roots',['../inout_8cpp.html#ae4b551d61948a4d88abf477a0187d229',1,'print_roots(double roots[], const double a, const double b, const double c):&#160;inout.cpp'],['../solver_8h.html#ae4b551d61948a4d88abf477a0187d229',1,'print_roots(double roots[], const double a, const double b, const double c):&#160;inout.cpp']]]
 ];

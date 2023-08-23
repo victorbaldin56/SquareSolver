@@ -133,30 +133,33 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   19</span>    <span class="keywordtype">double</span> roots_ref[2] = {NAN, NAN}; </div>
 <div class="line"><span class="lineno">   20</span>    <span class="keywordtype">int</span> nroots_ref = 0;</div>
 <div class="line"><span class="lineno">   21</span>    <span class="keywordtype">int</span> test_res = 0;</div>
-<div class="line"><span class="lineno">   22</span>    fscanf(test_file, <span class="stringliteral">&quot;a,b,c,root1,root2,ans&quot;</span>);           <span class="comment">// проверка на наличие пояснений в test_file</span></div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">while</span> (!feof(test_file)) {</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordtype">int</span> n_arg = fscanf(test_file, <span class="stringliteral">&quot;%lf, %lf, %lf, %lf, %lf, %d&quot;</span>,</div>
-<div class="line"><span class="lineno">   25</span>                                &amp;a, &amp;b, &amp;c, &amp;roots_ref[0], &amp;roots_ref[1], &amp;nroots_ref);  </div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (n_arg != 6 &amp;&amp; n_arg != EOF) {</div>
-<div class="line"><span class="lineno">   27</span>            printf(<span class="stringliteral">&quot;wrong input in test file\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">   29</span>        };</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> (run_test(a, b, c, roots_ref, nroots_ref) == -1)</div>
-<div class="line"><span class="lineno">   31</span>            test_res = -1;                        </div>
-<div class="line"><span class="lineno">   32</span>    }</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (test_res == 0)</div>
-<div class="line"><span class="lineno">   35</span>        printf(<span class="stringliteral">&quot;Test OK\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   36</span>    <span class="comment">// else print tests failed</span></div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    <span class="comment">// 8 tests</span></div>
-<div class="line"><span class="lineno">   39</span>    <span class="comment">// Test №3 Failed</span></div>
-<div class="line"><span class="lineno">   40</span>    <span class="comment">// Expected:</span></div>
-<div class="line"><span class="lineno">   41</span>    <span class="comment">// ax^2 + </span></div>
-<div class="line"><span class="lineno">   42</span>    <span class="comment">// 5/8 tests passed:</span></div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> test_res;</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordtype">int</span> num = 0; <span class="comment">// test number</span></div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">int</span> succeed = 0; <span class="comment">// number of succeed tests</span></div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    fscanf(test_file, <span class="stringliteral">&quot;a,b,c,root1,root2,ans&quot;</span>);           <span class="comment">// проверка на наличие пояснений в test_file</span></div>
+<div class="line"><span class="lineno">   26</span>    </div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">while</span> (!feof(test_file)) {</div>
+<div class="line"><span class="lineno">   28</span>        <span class="keywordtype">int</span> n_arg = fscanf(test_file, <span class="stringliteral">&quot;%lf, %lf, %lf, %lf, %lf, %d&quot;</span>,</div>
+<div class="line"><span class="lineno">   29</span>                                &amp;a, &amp;b, &amp;c, &amp;roots_ref[0], &amp;roots_ref[1], &amp;nroots_ref);</div>
+<div class="line"><span class="lineno">   30</span>        </div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">if</span> (n_arg != 6 &amp;&amp; n_arg != EOF) {</div>
+<div class="line"><span class="lineno">   32</span>            printf(<span class="stringliteral">&quot;wrong input in test file\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   34</span>        };</div>
+<div class="line"><span class="lineno">   35</span>        </div>
+<div class="line"><span class="lineno">   36</span>        num++;</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (run_test(a, b, c, roots_ref, nroots_ref, num) == -1) {</div>
+<div class="line"><span class="lineno">   38</span>            test_res = -1; </div>
+<div class="line"><span class="lineno">   39</span>        }</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   41</span>            succeed++;</div>
+<div class="line"><span class="lineno">   42</span>        }                        </div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    printf(<span class="stringliteral">&quot;%d/%d tests succeed\n&quot;</span>, succeed, num);</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> test_res;</div>
+<div class="line"><span class="lineno">   48</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
 

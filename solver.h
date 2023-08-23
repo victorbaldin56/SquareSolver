@@ -32,11 +32,9 @@ bool is_equal(double a, double b);
 int ss_test(FILE *test_file);
 
 /**
- * clears input buffer
-*/
-
-/**
- * 
+ * @param a pointer to a
+ * @param b pointer to b
+ * @param c pointer to c
 */
 void input_coeffs(double* a, double* b, double* c);
 
