@@ -6,12 +6,7 @@
 const int MAXLEN = 1000; // max lenght of compared strings
 
 // clears input buffer
-static void clear_buf() {
-    int c = 0;
-    while (c != '\n') {
-        c = getchar();
-    }
-}
+static void clear_buf();
 
 int main(int argc, char *argv[]) {
     printf("# Square equation solver\n"
@@ -50,4 +45,11 @@ int main(int argc, char *argv[]) {
             return -1;
     }
     return 0;
+}
+
+static void clear_buf() {
+    int c = 0;
+    while (c != '\n') {
+        c = getchar();
+    }
 }

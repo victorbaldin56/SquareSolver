@@ -13,6 +13,13 @@
 */
 static int do_solve_linear(double roots[], const double b, const double c);
 
+/**
+ * Case of quadratic equation
+ * @param a first coef, a!=0
+ * @param b second coef
+ * @param c third coef
+ * @return number of roots
+*/
 static int do_solve_quad(double roots[], const double a, const double b, const double c);
 
 bool is_equal(double a, double b) {
@@ -64,7 +71,8 @@ static int do_solve_quad(double roots[], const double a, const double b, const d
     assert(roots != NULL);
 
     double D = b * b - 4 * a * c;
-    if (!is_equal(b, 0)) {
+
+    if (!is_equal(c, 0) && !is_equal(b, 0)) {
         if (D >= 0) {
             if (!is_equal(D, 0)) {
                 double D1 = sqrt(D);
@@ -83,6 +91,21 @@ static int do_solve_quad(double roots[], const double a, const double b, const d
             return 0;
         }
     }
+
+    else if (is_equal(b, 0) && !is_equal(c, 0)) {
+        // оптимизация в случае нулевого второго коэффициента
+        double root_sqr = -c / a;
+        if (root_sqr > 0) {
+            roots[0] = -sqrt(root_sqr);
+            roots[1] = sqrt(root_sqr);
+            return 2;
+        }
+        else {
+            roots[0] = roots[1] = NAN;
+            return 0;
+        }
+    }
+
     else {
         // оптимизация для случая нулевого свободного коэффициента
         if (!is_equal(b, 0)) {
