@@ -16,13 +16,13 @@ int main(int argc, char *argv[]) {
         // запуск в режиме тестирования
         printf("# Running test\n");
         FILE *test_file = fopen("test_values.csv", "r");
-        return solve_test(test_file);
+        return ss_test(test_file);
     }
 
     double a = NAN, b = NAN, c = NAN;
     printf("# Enter equation coeffitients dividing by spaces: ");
     
-    while(scanf("%lf %lf %lf", &a, &b, &c) != 3) {
+    while(scanf("%lf %lf %lf", &a, &b, &c) != 3) { // EOF?
         clear_buf();
         printf("Wrong input, try again\n"); // retry
     }

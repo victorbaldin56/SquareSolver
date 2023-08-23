@@ -12,10 +12,9 @@
  * @param nroots_ref reference return value of solve_square()
  * @return 0 if all values are equal to the reference, -1 if not
 */
-static int check(double a, double b, double c, double roots_ref[], int nroots_ref);
+static int run_test(double a, double b, double c, double roots_ref[], int nroots_ref);
 
-int solve_test(FILE *test_file) {
-
+int ss_test(FILE *test_file) {
     double a = NAN, b = NAN, c = NAN;
     double roots_ref[2] = {NAN, NAN}; 
     int nroots_ref = 0;
@@ -28,17 +27,24 @@ int solve_test(FILE *test_file) {
             printf("wrong input in test file\n");
             return -1;
         };
-        if (check(a, b, c, roots_ref, nroots_ref) == -1)
+        if (run_test(a, b, c, roots_ref, nroots_ref) == -1)
             test_res = -1;                        
-
     }
+
     if (test_res == 0)
         printf("Test OK\n");
-    return test_res;
+    // else print tests failed
 
+    // 8 tests
+    // Test №3 Failed
+    // Expected:
+    // ax^2 + 
+    // 5/8 tests passed:
+
+    return test_res;
 }
 
-static int check(double a, double b, double c, double roots_ref[], int nroots_ref) {
+static int run_test(double a, double b, double c, double roots_ref[], int nroots_ref) {
     double roots[] = {NAN, NAN};
     int nroots = solve_square(roots, a, b, c);
     if (!is_equal(roots[0], roots_ref[0]) || !is_equal(roots[1], roots_ref[1]) || 

@@ -4,8 +4,7 @@
 #include <stdio.h>
 
 const int INFINITE = 3; // бесконечное число корней
-const int ERROR = -1; // ошибка
-
+const int ERROR = -1;
 
 /**
  * Solves the quadratic equation a*x^2+b*x+c=0
@@ -30,6 +29,6 @@ bool is_equal(double a, double b);
  * @param test_file pointer to the file with reference values
  * @return -1 in case of error, otherwise 0
 */
-int solve_test(FILE *test_file);
+int ss_test(FILE *test_file);
 
 #endif // MY_SOLVER_H
