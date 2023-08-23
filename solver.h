@@ -11,7 +11,7 @@ const int ERROR = -1; // ошибка
  * @param a first coef
  * @param b second coef
  * @param c third coef
- * @return the number of roots of error code -1 
+ * @return the number of roots or error code -1 
 */
 int solve_square(double roots[], const double a, const double b, const double c);
 

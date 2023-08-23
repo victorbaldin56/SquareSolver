@@ -3,7 +3,7 @@
 #include <string.h>
 #include "solver.h"
 
-#define MAXLEN 1000 // max lenght of compared strings
+const int MAXLEN = 1000; // max lenght of compared strings
 
 // clears input buffer
 static void clear_buf() {

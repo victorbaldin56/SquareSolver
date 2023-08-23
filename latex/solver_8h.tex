@@ -1,0 +1,201 @@
+\doxysection{solver.\+h File Reference}
+\hypertarget{solver_8h}{}\label{solver_8h}\index{solver.h@{solver.h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{solver_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{solver_8h_aaf49f2e07bc953a77984b50601702788}{solve\+\_\+square}} (double roots\mbox{[}$\,$\mbox{]}, const double a, const double b, const double c)
+\item 
+bool \mbox{\hyperlink{solver_8h_a8fd312984962992d16840d50fd38304d}{is\+\_\+equal}} (double a, double b)
+\item 
+int \mbox{\hyperlink{solver_8h_acef4122e6a3bec867e9d0d2449c8cf1f}{solve\+\_\+test}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{solver_8h_ae831e56053b8abc343b931bc11a63be4}{INFINITE}} = 3
+\item 
+const int \mbox{\hyperlink{solver_8h_ac9bcbe19995a8140cd4ec61773cd6e67}{ERROR}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{solver_8h_a8fd312984962992d16840d50fd38304d}\label{solver_8h_a8fd312984962992d16840d50fd38304d} 
+\index{solver.h@{solver.h}!is\_equal@{is\_equal}}
+\index{is\_equal@{is\_equal}!solver.h@{solver.h}}
+\doxysubsubsection{\texorpdfstring{is\_equal()}{is\_equal()}}
+{\footnotesize\ttfamily bool is\+\_\+equal (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})}
+
+Two doubles comparison 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if close enough, 0 if not ~\newline
+ 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{solve_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{solve_8cpp_source}{solve.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ prec\ =\ 1.0e-\/7;\ \textcolor{comment}{//\ точность\ сравнения}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ (fabs(a\ -\/\ b)\ <=\ prec)\ ||\ (isnan(a)\ \&\&\ isnan(b));}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{solve_8cpp_source_l00023}{solve\+\_\+square()}}, and \mbox{\hyperlink{solve__test_8cpp_source_l00006}{solve\+\_\+test()}}.
+
+\Hypertarget{solver_8h_aaf49f2e07bc953a77984b50601702788}\label{solver_8h_aaf49f2e07bc953a77984b50601702788} 
+\index{solver.h@{solver.h}!solve\_square@{solve\_square}}
+\index{solve\_square@{solve\_square}!solver.h@{solver.h}}
+\doxysubsubsection{\texorpdfstring{solve\_square()}{solve\_square()}}
+{\footnotesize\ttfamily int solve\+\_\+square (\begin{DoxyParamCaption}\item[{double}]{roots\mbox{[}$\,$\mbox{]},  }\item[{const double}]{a,  }\item[{const double}]{b,  }\item[{const double}]{c }\end{DoxyParamCaption})}
+
+Solves the quadratic equation a\texorpdfstring{$\ast$}{*}x\texorpdfstring{$^\wedge$}{\string^}2+b\texorpdfstring{$\ast$}{*}x+c=0 
+\begin{DoxyParams}{Parameters}
+{\em roots} & array of roots filled by this function \\
+\hline
+{\em a} & first coef \\
+\hline
+{\em b} & second coef \\
+\hline
+{\em c} & third coef \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of roots or error code -\/1 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{solve_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{solve_8cpp_source}{solve.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isfinite(a)\ ||\ !isfinite(b)\ ||\ !isfinite(c))}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{solver_8h_ac9bcbe19995a8140cd4ec61773cd6e67}{ERROR}};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (roots\ ==\ NULL)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{solver_8h_ac9bcbe19995a8140cd4ec61773cd6e67}{ERROR}};\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{solve_8cpp_a8fd312984962992d16840d50fd38304d}{is\_equal}}(a,\ 0))}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ do\_solve\_quad(roots,\ a,\ b,\ c);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ do\_solve\_linear(roots,\ b,\ c);}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{solver_8h_source_l00005}{ERROR}}, and \mbox{\hyperlink{solve_8cpp_source_l00018}{is\+\_\+equal()}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00016}{main()}}, and \mbox{\hyperlink{solve__test_8cpp_source_l00006}{solve\+\_\+test()}}.
+
+\Hypertarget{solver_8h_acef4122e6a3bec867e9d0d2449c8cf1f}\label{solver_8h_acef4122e6a3bec867e9d0d2449c8cf1f} 
+\index{solver.h@{solver.h}!solve\_test@{solve\_test}}
+\index{solve\_test@{solve\_test}!solver.h@{solver.h}}
+\doxysubsubsection{\texorpdfstring{solve\_test()}{solve\_test()}}
+{\footnotesize\ttfamily int solve\+\_\+test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{solve__test_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{solve__test_8cpp_source}{solve\+\_\+test.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00007\ \ \ \ \ FILE\ *test\_file\ =\ fopen(\textcolor{stringliteral}{"{}test\_values.csv"{}},\ \textcolor{stringliteral}{"{}r"{}});\ \ \ \ \ \ \textcolor{comment}{//\ чтение\ файла\ с\ тестовыми\ значениями}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{double}\ a\ =\ NAN,\ b\ =\ NAN,\ c\ =\ NAN;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{double}\ roots[2]\ =\ \{NAN,\ NAN\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ массив\ корней,\ который\ заполняется\ функцией\ solve}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ valid\_roots[2]\ =\ \{NAN,\ NAN\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ конрольные\ значения\ корней,\ полученные\ из\ файла}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ ans\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ возвращаемое\ значение\ функции\ solve}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ valid\_ans\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ контрольное\ значение\ функции\ solve}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ res\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ результат\ тестирования}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ fscanf(test\_file,\ \textcolor{stringliteral}{"{}a,b,c,root1,root2,ans"{}});\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ проверка\ на\ наличие\ пояснений\ в\ test\_file}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{while}\ (!feof(test\_file))\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n\_arg\ =\ fscanf(test\_file,\ \textcolor{stringliteral}{"{}\%lf,\ \%lf,\ \%lf,\ \%lf,\ \%lf,\ \%d"{}},\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&a,\ \&b,\ \&c,\ \&valid\_roots[0],\ \&valid\_roots[1],\ \&valid\_ans);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\_arg\ !=\ 6\ \&\&\ n\_arg\ !=\ EOF)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Invalid\ test\ values\(\backslash\)n"{}});}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ ans\ =\ \mbox{\hyperlink{solve_8cpp_aaa2d02a15249a32c9ada24e34aaccd1e}{solve\_square}}(roots,\ a,\ b,\ c);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ans\ ==\ valid\_ans\ \&\&}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{solve_8cpp_a8fd312984962992d16840d50fd38304d}{is\_equal}}(roots[0],\ valid\_roots[0])\ \&\&\ \mbox{\hyperlink{solve_8cpp_a8fd312984962992d16840d50fd38304d}{is\_equal}}(roots[1],\ valid\_roots[1]))\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}OK\(\backslash\)n"{}});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Test\ failed\ on\ values:\ a\ =\ \%g,\ b\ =\ \%g,\ c\ =\ \%g\(\backslash\)n"{}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a,\ b,\ c);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res\ =\ -\/1;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (res\ ==\ 0)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Tests\ OK\(\backslash\)n"{}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ fclose(test\_file);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{solve_8cpp_source_l00018}{is\+\_\+equal()}}, and \mbox{\hyperlink{solve_8cpp_source_l00023}{solve\+\_\+square()}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00016}{main()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{solver_8h_ac9bcbe19995a8140cd4ec61773cd6e67}\label{solver_8h_ac9bcbe19995a8140cd4ec61773cd6e67} 
+\index{solver.h@{solver.h}!ERROR@{ERROR}}
+\index{ERROR@{ERROR}!solver.h@{solver.h}}
+\doxysubsubsection{\texorpdfstring{ERROR}{ERROR}}
+{\footnotesize\ttfamily const int ERROR = -\/1}
+
+
+
+Definition at line \mbox{\hyperlink{solver_8h_source_l00005}{5}} of file \mbox{\hyperlink{solver_8h_source}{solver.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{solve_8cpp_source_l00023}{solve\+\_\+square()}}.
+
+\Hypertarget{solver_8h_ae831e56053b8abc343b931bc11a63be4}\label{solver_8h_ae831e56053b8abc343b931bc11a63be4} 
+\index{solver.h@{solver.h}!INFINITE@{INFINITE}}
+\index{INFINITE@{INFINITE}!solver.h@{solver.h}}
+\doxysubsubsection{\texorpdfstring{INFINITE}{INFINITE}}
+{\footnotesize\ttfamily const int INFINITE = 3}
+
+
+
+Definition at line \mbox{\hyperlink{solver_8h_source_l00004}{4}} of file \mbox{\hyperlink{solver_8h_source}{solver.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_source_l00016}{main()}}.
+

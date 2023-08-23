@@ -4,6 +4,13 @@
 
 // How many NaN exist
 
+/**
+ * Case of linear equation b*x+c=0
+ * @param roots array of roots
+ * @param b first coef
+ * @param c second coef
+ * @return the number of roots or error code -1
+*/
 static int do_solve_linear(double roots[], const double b, const double c);
 
 static int do_solve_quad(double roots[], const double a, const double b, const double c);
@@ -26,13 +33,6 @@ int solve_square(double roots[], double a, double b, double c) {
         return do_solve_linear(roots, b, c);
 }
 
-/**
- * Case of linear equation b*x+c=0
- * @param roots array of roots
- * @param b first coef
- * @param c second coef
- * @return the number of roots or error code -1
-*/
 static int do_solve_linear(double roots[], const double b, const double c) {
 
     assert(std::isfinite(b));
