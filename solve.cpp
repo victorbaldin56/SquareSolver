@@ -4,9 +4,9 @@
 
 // How many NaN exist
 
-static int solve_linear(double roots[], const double b, const double c);
+static int do_solve_linear(double roots[], const double b, const double c);
 
-static int solve_quad(double roots[], const double a, const double b, const double c);
+static int do_solve_quad(double roots[], const double a, const double b, const double c);
 
 bool is_equal(double a, double b) {
     const double prec = 1.0e-7; // точность сравнения
@@ -21,9 +21,9 @@ int solve_square(double roots[], double a, double b, double c) {
         return ERROR; 
 
     if (!is_equal(a, 0))
-        return solve_quad(roots, a, b, c);
+        return do_solve_quad(roots, a, b, c);
     else
-        return solve_linear(roots, b, c);
+        return do_solve_linear(roots, b, c);
 }
 
 /**
@@ -33,7 +33,7 @@ int solve_square(double roots[], double a, double b, double c) {
  * @param c second coef
  * @return the number of roots or error code -1
 */
-static int solve_linear(double roots[], const double b, const double c) {
+static int do_solve_linear(double roots[], const double b, const double c) {
 
     assert(std::isfinite(b));
     assert(std::isfinite(c));
@@ -56,7 +56,7 @@ static int solve_linear(double roots[], const double b, const double c) {
     }
 }
 
-static int solve_quad(double roots[], const double a, const double b, const double c) {
+static int do_solve_quad(double roots[], const double a, const double b, const double c) {
     
     assert(std::isfinite(a));
     assert(std::isfinite(b));
@@ -86,7 +86,7 @@ static int solve_quad(double roots[], const double a, const double b, const doub
     else {
         // оптимизация для случая нулевого свободного коэффициента
         if (!is_equal(b, 0)) {
-            solve_linear(roots, a, b);
+            do_solve_linear(roots, a, b);
             roots[1] = 0;
             return 2;
         }
