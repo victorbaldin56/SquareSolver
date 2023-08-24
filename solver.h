@@ -43,18 +43,18 @@ bool isequal(double a, double b);
  * @param test_file pointer to the file with reference values
  * @return -1 in case of error, otherwise 0
 */
-int ss_test(FILE *test_file);
 
 /**
- * @param a pointer to a
- * @param b pointer to b
- * @param c pointer to c
+ * @param eq pointer to a Polynome structure
+ * Inputs coeffs of the given polynome 
 */
 void input_coeffs(Polynome *eq);
 
 /**
- * 
+ * @param eq pointer to a Polynome structure
 */
 void print_roots(Polynome *eq);
+
+int ss_test(FILE *test_file);
 
 #endif // MY_SOLVER_H
