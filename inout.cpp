@@ -16,7 +16,8 @@ void input_coeffs(Polynome *eq) {
 }
 
 void print_roots(Polynome *eq) {
-    
+    assert(eq != NULL);
+
     switch (solve_square(eq)) {
         case 0:
             printf("No roots\n");

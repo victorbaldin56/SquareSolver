@@ -78,22 +78,25 @@ $(function() {
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
 <code>#include &quot;<a class="el" href="solver_8h_source.html">solver.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#amain_8cpp" alt=""/></div>
 <map name="amain_8cpp" id="amain_8cpp">
-<area shape="rect" title=" " alt="" coords="62,5,145,31"/>
-<area shape="rect" title=" " alt="" coords="82,152,149,177"/>
-<area shape="poly" title=" " alt="" coords="73,33,47,46,23,63,9,82,8,92,12,103,23,117,38,129,70,147,68,152,34,134,19,121,8,105,3,93,4,80,19,59,44,41,71,28"/>
-<area shape="rect" title=" " alt="" coords="23,79,91,104"/>
-<area shape="poly" title=" " alt="" coords="98,32,74,69,69,66,93,30"/>
-<area shape="rect" title=" " alt="" coords="115,79,185,104"/>
-<area shape="poly" title=" " alt="" coords="113,30,137,66,132,69,109,32"/>
-<area shape="rect" href="solver_8h.html" title=" " alt="" coords="209,79,283,104"/>
-<area shape="poly" title=" " alt="" coords="127,28,212,70,209,75,125,33"/>
-<area shape="poly" title=" " alt="" coords="226,106,150,148,147,143,224,102"/>
+<area shape="rect" title=" " alt="" coords="110,5,193,31"/>
+<area shape="rect" title=" " alt="" coords="130,152,197,177"/>
+<area shape="poly" title=" " alt="" coords="111,30,70,41,33,57,19,67,11,77,8,89,14,103,35,124,61,139,89,150,117,156,116,161,88,155,58,144,31,128,10,105,3,90,6,75,15,63,30,52,69,36,109,24"/>
+<area shape="rect" title=" " alt="" coords="24,79,92,104"/>
+<area shape="poly" title=" " alt="" coords="138,33,86,72,83,68,135,29"/>
+<area shape="rect" title=" " alt="" coords="116,79,187,104"/>
+<area shape="poly" title=" " alt="" coords="154,31,154,65,149,65,149,31"/>
+<area shape="rect" title=" " alt="" coords="212,79,281,104"/>
+<area shape="poly" title=" " alt="" coords="169,29,222,68,218,72,165,33"/>
+<area shape="rect" href="solver_8h.html" title=" " alt="" coords="306,79,379,104"/>
+<area shape="poly" title=" " alt="" coords="183,28,299,71,297,76,181,33"/>
+<area shape="poly" title=" " alt="" coords="315,107,206,149,205,144,313,102"/>
 </map>
 </div>
 </div>
@@ -136,31 +139,41 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00008">8</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    8</span>                                 {</div>
-<div class="line"><span class="lineno">    9</span>    printf(<span class="stringliteral">&quot;# Square equation solver\n&quot;</span></div>
-<div class="line"><span class="lineno">   10</span>           <span class="stringliteral">&quot;# (c) Victor Baldin, 2023\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   11</span>    </div>
-<div class="line"><span class="lineno">   12</span>    <span class="keywordflow">if</span> (argc == 2 &amp;&amp; !strncmp(<span class="stringliteral">&quot;--test&quot;</span>, argv[1], <a class="code hl_variable" href="main_8cpp.html#a09aab0719908e5f01c77d290451579fc">MAXLEN</a>)) {</div>
-<div class="line"><span class="lineno">   13</span>        <span class="comment">// run tests</span></div>
-<div class="line"><span class="lineno">   14</span>        printf(<span class="stringliteral">&quot;# Running test\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   15</span>        FILE *test_file = fopen(<span class="stringliteral">&quot;test_values.csv&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="solve__test_8cpp.html#ad6f3a7e970a7ab967e306df38bbe8f8a">ss_test</a>(test_file);</div>
-<div class="line"><span class="lineno">   17</span>    }</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">double</span> a = NAN, b = NAN, c = NAN;</div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_function" href="inout_8cpp.html#a06e4024597343ff720c471b80ff3edaf">input_coeffs</a>(&amp;a, &amp;b, &amp;c);</div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordtype">double</span> roots[2] = {NAN, NAN};</div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_function" href="inout_8cpp.html#ae4b551d61948a4d88abf477a0187d229">print_roots</a>(roots, a, b, c);</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   25</span>}</div>
-<div class="ttc" id="ainout_8cpp_html_a06e4024597343ff720c471b80ff3edaf"><div class="ttname"><a href="inout_8cpp.html#a06e4024597343ff720c471b80ff3edaf">input_coeffs</a></div><div class="ttdeci">void input_coeffs(double *a, double *b, double *c)</div><div class="ttdef"><b>Definition</b> <a href="inout_8cpp_source.html#l00006">inout.cpp:6</a></div></div>
-<div class="ttc" id="ainout_8cpp_html_ae4b551d61948a4d88abf477a0187d229"><div class="ttname"><a href="inout_8cpp.html#ae4b551d61948a4d88abf477a0187d229">print_roots</a></div><div class="ttdeci">void print_roots(double roots[], const double a, const double b, const double c)</div><div class="ttdef"><b>Definition</b> <a href="inout_8cpp_source.html#l00016">inout.cpp:16</a></div></div>
-<div class="ttc" id="amain_8cpp_html_a09aab0719908e5f01c77d290451579fc"><div class="ttname"><a href="main_8cpp.html#a09aab0719908e5f01c77d290451579fc">MAXLEN</a></div><div class="ttdeci">const int MAXLEN</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00006">main.cpp:6</a></div></div>
-<div class="ttc" id="asolve__test_8cpp_html_ad6f3a7e970a7ab967e306df38bbe8f8a"><div class="ttname"><a href="solve__test_8cpp.html#ad6f3a7e970a7ab967e306df38bbe8f8a">ss_test</a></div><div class="ttdeci">int ss_test(FILE *test_file)</div><div class="ttdef"><b>Definition</b> <a href="solve__test_8cpp_source.html#l00017">solve_test.cpp:17</a></div></div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00009">9</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>                                 {</div>
+<div class="line"><span class="lineno">   10</span>    printf(<span class="stringliteral">&quot;# Square equation solver\n&quot;</span></div>
+<div class="line"><span class="lineno">   11</span>           <span class="stringliteral">&quot;# (c) Victor Baldin, 2023\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   12</span>    </div>
+<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span> (argc == 3 &amp;&amp; !strncmp(<span class="stringliteral">&quot;--test&quot;</span>, argv[1], <a class="code hl_variable" href="main_8cpp.html#a09aab0719908e5f01c77d290451579fc">MAXLEN</a>)) { <span class="comment">// key --help , --test filename </span></div>
+<div class="line"><span class="lineno">   14</span>        <span class="comment">// run tests</span></div>
+<div class="line"><span class="lineno">   15</span>        printf(<span class="stringliteral">&quot;# Running test\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   16</span>        FILE *test_file = fopen(argv[2], <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><span class="lineno">   17</span>        assert(test_file != NULL);</div>
+<div class="line"><span class="lineno">   18</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="solve__test_8cpp.html#ad6f3a7e970a7ab967e306df38bbe8f8a">ss_test</a>(test_file);</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">if</span> (argc == 2 &amp;&amp; !strncmp(<span class="stringliteral">&quot;--help&quot;</span>, argv[1], <a class="code hl_variable" href="main_8cpp.html#a09aab0719908e5f01c77d290451579fc">MAXLEN</a>)) { <span class="comment">//moar help</span></div>
+<div class="line"><span class="lineno">   22</span>        printf(<span class="stringliteral">&quot;square_solver solves the quadratic equation ax^2 + bx + c, &quot;</span></div>
+<div class="line"><span class="lineno">   23</span>               <span class="stringliteral">&quot;where a, b, c is real numbers\n&quot;</span></div>
+<div class="line"><span class="lineno">   24</span>               <span class="stringliteral">&quot;Run ./square_solver and enter coeffitients a, b, c in format \&quot;a b c\&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   26</span>    }</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_struct" href="struct_polynome.html">Polynome</a> equation = {};</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_struct" href="struct_polynome.html">Polynome</a> *eq = &amp;equation;</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_function" href="inout_8cpp.html#aceb7eff54ff201a50dc91f76aa887881">input_coeffs</a>(eq);</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="inout_8cpp.html#a3e26f46ab16a1765d78cab2392e33aff">print_roots</a>(eq);</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   35</span>}</div>
+<div class="ttc" id="ainout_8cpp_html_a3e26f46ab16a1765d78cab2392e33aff"><div class="ttname"><a href="inout_8cpp.html#a3e26f46ab16a1765d78cab2392e33aff">print_roots</a></div><div class="ttdeci">void print_roots(Polynome *eq)</div><div class="ttdef"><b>Definition</b> <a href="inout_8cpp_source.html#l00018">inout.cpp:18</a></div></div>
+<div class="ttc" id="ainout_8cpp_html_aceb7eff54ff201a50dc91f76aa887881"><div class="ttname"><a href="inout_8cpp.html#aceb7eff54ff201a50dc91f76aa887881">input_coeffs</a></div><div class="ttdeci">void input_coeffs(Polynome *eq)</div><div class="ttdef"><b>Definition</b> <a href="inout_8cpp_source.html#l00007">inout.cpp:7</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a09aab0719908e5f01c77d290451579fc"><div class="ttname"><a href="main_8cpp.html#a09aab0719908e5f01c77d290451579fc">MAXLEN</a></div><div class="ttdeci">const int MAXLEN</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00007">main.cpp:7</a></div></div>
+<div class="ttc" id="asolve__test_8cpp_html_ad6f3a7e970a7ab967e306df38bbe8f8a"><div class="ttname"><a href="solve__test_8cpp.html#ad6f3a7e970a7ab967e306df38bbe8f8a">ss_test</a></div><div class="ttdeci">int ss_test(FILE *test_file)</div><div class="ttdef"><b>Definition</b> <a href="solve__test_8cpp_source.html#l00018">solve_test.cpp:18</a></div></div>
+<div class="ttc" id="astruct_polynome_html"><div class="ttname"><a href="struct_polynome.html">Polynome</a></div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00012">solver.h:12</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="inout_8cpp_source.html#l00006">input_coeffs()</a>, <a class="el" href="main_8cpp_source.html#l00006">MAXLEN</a>, <a class="el" href="inout_8cpp_source.html#l00016">print_roots()</a>, and <a class="el" href="solve__test_8cpp_source.html#l00017">ss_test()</a>.</p>
+<p class="reference">References <a class="el" href="inout_8cpp_source.html#l00007">input_coeffs()</a>, <a class="el" href="main_8cpp_source.html#l00007">MAXLEN</a>, <a class="el" href="inout_8cpp_source.html#l00018">print_roots()</a>, and <a class="el" href="solve__test_8cpp_source.html#l00018">ss_test()</a>.</p>
 
 </div>
 </div>
@@ -177,9 +190,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00006">6</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00007">7</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['infinite_0',['INFINITE',['../solver_8h.html#ae831e56053b8abc343b931bc11a63be4',1,'solver.h']]]
+  ['b_0',['b',['../struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5',1,'Polynome::b'],['../struct_test_data.html#a889e4eafa10e220f270240246fc48355',1,'TestData::b']]]
 ];

@@ -18,6 +18,7 @@ bool isequal(double a, double b) {
     return (fabs(a - b) <= prec) || (isnan(a) && isnan(b));
 }
 
+
 int solve_square(Polynome *eq) {
 
     assert(isfinite(eq->a));

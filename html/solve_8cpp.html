@@ -98,20 +98,20 @@ Include dependency graph for solve.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8fd312984962992d16840d50fd38304d" id="r_a8fd312984962992d16840d50fd38304d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve_8cpp.html#a8fd312984962992d16840d50fd38304d">is_equal</a> (double a, double b)</td></tr>
-<tr class="separator:a8fd312984962992d16840d50fd38304d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf49f2e07bc953a77984b50601702788" id="r_aaf49f2e07bc953a77984b50601702788"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve_8cpp.html#aaf49f2e07bc953a77984b50601702788">solve_square</a> (double roots[], const double a, const double b, const double c)</td></tr>
-<tr class="separator:aaf49f2e07bc953a77984b50601702788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69e45bdefacf24536533958e9475eeb3" id="r_a69e45bdefacf24536533958e9475eeb3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve_8cpp.html#a69e45bdefacf24536533958e9475eeb3">isequal</a> (double a, double b)</td></tr>
+<tr class="separator:a69e45bdefacf24536533958e9475eeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95833bf7c65e1ea7a16131262f2fdf89" id="r_a95833bf7c65e1ea7a16131262f2fdf89"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solve_8cpp.html#a95833bf7c65e1ea7a16131262f2fdf89">solve_square</a> (<a class="el" href="struct_polynome.html">Polynome</a> *eq)</td></tr>
+<tr class="separator:a95833bf7c65e1ea7a16131262f2fdf89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a8fd312984962992d16840d50fd38304d" name="a8fd312984962992d16840d50fd38304d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fd312984962992d16840d50fd38304d">&#9670;&#160;</a></span>is_equal()</h2>
+<a id="a69e45bdefacf24536533958e9475eeb3" name="a69e45bdefacf24536533958e9475eeb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69e45bdefacf24536533958e9475eeb3">&#9670;&#160;</a></span>isequal()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool is_equal </td>
+          <td class="memname">bool isequal </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -139,18 +139,18 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>1 if close enough, 0 if not <br  />
  </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="solve_8cpp_source.html#l00025">25</a> of file <a class="el" href="solve_8cpp_source.html">solve.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>                                  {</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> prec = 1.0e-7; <span class="comment">// точность сравнения</span></div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> (fabs(a - b) &lt;= prec) || (isnan(a) &amp;&amp; isnan(b));</div>
-<div class="line"><span class="lineno">   28</span>}</div>
+<p class="definition">Definition at line <a class="el" href="solve_8cpp_source.html#l00016">16</a> of file <a class="el" href="solve_8cpp_source.html">solve.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>                                 {</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> prec = 1.0e-7; <span class="comment">// точность сравнения</span></div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> (fabs(a - b) &lt;= prec) || (isnan(a) &amp;&amp; isnan(b));</div>
+<div class="line"><span class="lineno">   19</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="solve_8cpp_source.html#l00030">solve_square()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="solve_8cpp_source.html#l00022">solve_square()</a>.</p>
 
 </div>
 </div>
-<a id="aaf49f2e07bc953a77984b50601702788" name="aaf49f2e07bc953a77984b50601702788"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf49f2e07bc953a77984b50601702788">&#9670;&#160;</a></span>solve_square()</h2>
+<a id="a95833bf7c65e1ea7a16131262f2fdf89" name="a95833bf7c65e1ea7a16131262f2fdf89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95833bf7c65e1ea7a16131262f2fdf89">&#9670;&#160;</a></span>solve_square()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,67 +158,90 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int solve_square </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>roots</em>[], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="struct_polynome.html">Polynome</a> *&#160;</td>
+          <td class="paramname"><em>eq</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>c</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Solves the quadratic equation a*x^2+b*x+c=0 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">roots</td><td>array of roots filled by this function </td></tr>
-    <tr><td class="paramname">a</td><td>first coef </td></tr>
-    <tr><td class="paramname">b</td><td>second coef </td></tr>
-    <tr><td class="paramname">c</td><td>third coef </td></tr>
+    <tr><td class="paramname">eq</td><td>pointer to a <a class="el" href="struct_polynome.html">Polynome</a> structure </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the number of roots or error code -1 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>number of roots of the polynome </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="solve_8cpp_source.html#l00030">30</a> of file <a class="el" href="solve_8cpp_source.html">solve.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>                                                                                 {</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (!isfinite(a) || !isfinite(b) || !isfinite(c)) {</div>
-<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="solver_8h.html#ac9bcbe19995a8140cd4ec61773cd6e67">ERROR</a>;</div>
+<p class="definition">Definition at line <a class="el" href="solve_8cpp_source.html#l00022">22</a> of file <a class="el" href="solve_8cpp_source.html">solve.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>                               {</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    assert(isfinite(eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">a</a>));</div>
+<div class="line"><span class="lineno">   25</span>    assert(isfinite(eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">b</a>));</div>
+<div class="line"><span class="lineno">   26</span>    assert(isfinite(eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a16de1b5783638cb3b1edc073822ee806">c</a>));</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="solve_8cpp.html#a69e45bdefacf24536533958e9475eeb3">isequal</a>(eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">a</a>, 0)) {</div>
+<div class="line"><span class="lineno">   29</span>        assert(eq != NULL);</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordtype">int</span> nroots = do_solve_linear(eq);</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span> nroots;</div>
 <div class="line"><span class="lineno">   33</span>    }</div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (roots == NULL) {</div>
-<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="solver_8h.html#ac9bcbe19995a8140cd4ec61773cd6e67">ERROR</a>; </div>
-<div class="line"><span class="lineno">   36</span>    }</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="solve_8cpp.html#a8fd312984962992d16840d50fd38304d">is_equal</a>(a, 0)) {</div>
-<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">return</span> do_solve_linear(roots, b, c);</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> do_solve_quad(roots, a, b, c);</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="solve_8cpp.html#a69e45bdefacf24536533958e9475eeb3">isequal</a>(eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a16de1b5783638cb3b1edc073822ee806">c</a>, 0)) {</div>
+<div class="line"><span class="lineno">   36</span>        </div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="solve_8cpp.html#a69e45bdefacf24536533958e9475eeb3">isequal</a>(eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">b</a>, 0)) {</div>
+<div class="line"><span class="lineno">   38</span>            eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8ab774e8291e831dbc1df82105f6e5f6">x2</a> = 0;</div>
+<div class="line"><span class="lineno">   39</span>            eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a16de1b5783638cb3b1edc073822ee806">c</a> = eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">b</a>;</div>
+<div class="line"><span class="lineno">   40</span>            eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">b</a> = eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">a</a>;</div>
+<div class="line"><span class="lineno">   41</span>            eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">a</a> = 0;</div>
+<div class="line"><span class="lineno">   42</span>            do_solve_linear(eq);</div>
 <div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>}</div>
-<div class="ttc" id="asolve_8cpp_html_a8fd312984962992d16840d50fd38304d"><div class="ttname"><a href="solve_8cpp.html#a8fd312984962992d16840d50fd38304d">is_equal</a></div><div class="ttdeci">bool is_equal(double a, double b)</div><div class="ttdef"><b>Definition</b> <a href="solve_8cpp_source.html#l00025">solve.cpp:25</a></div></div>
-<div class="ttc" id="asolver_8h_html_ac9bcbe19995a8140cd4ec61773cd6e67"><div class="ttname"><a href="solver_8h.html#ac9bcbe19995a8140cd4ec61773cd6e67">ERROR</a></div><div class="ttdeci">const int ERROR</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00007">solver.h:7</a></div></div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">return</span> 2;</div>
+<div class="line"><span class="lineno">   45</span>        }</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   48</span>            eq-&gt;<a class="code hl_variable" href="struct_polynome.html#adf12a1424aef053eafbd6474eb853fee">x1</a> = 0;</div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   50</span>        }</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordtype">double</span> D = eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">b</a> * eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">b</a> - 4 * eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">a</a> * eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a16de1b5783638cb3b1edc073822ee806">c</a>;</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="solve_8cpp.html#a69e45bdefacf24536533958e9475eeb3">isequal</a>(D, 0)) {</div>
+<div class="line"><span class="lineno">   58</span>            eq-&gt;<a class="code hl_variable" href="struct_polynome.html#adf12a1424aef053eafbd6474eb853fee">x1</a> = -eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">b</a> / (2 * eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">a</a>);</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   63</span>            </div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">if</span> (D &gt; 0) {</div>
+<div class="line"><span class="lineno">   65</span>                <span class="keywordtype">double</span> sqrt_D = sqrt(D);</div>
+<div class="line"><span class="lineno">   66</span>                eq-&gt;<a class="code hl_variable" href="struct_polynome.html#adf12a1424aef053eafbd6474eb853fee">x1</a> = (-eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">b</a> - sqrt_D) / (2 * eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">a</a>);</div>
+<div class="line"><span class="lineno">   67</span>                eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8ab774e8291e831dbc1df82105f6e5f6">x2</a> = (-eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">b</a> + sqrt_D) / (2 * eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">a</a>);</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>                <span class="keywordflow">return</span> 2;</div>
+<div class="line"><span class="lineno">   70</span>            }</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   73</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   74</span>            }</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>        }</div>
+<div class="line"><span class="lineno">   77</span>        </div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>}</div>
+<div class="ttc" id="asolve_8cpp_html_a69e45bdefacf24536533958e9475eeb3"><div class="ttname"><a href="solve_8cpp.html#a69e45bdefacf24536533958e9475eeb3">isequal</a></div><div class="ttdeci">bool isequal(double a, double b)</div><div class="ttdef"><b>Definition</b> <a href="solve_8cpp_source.html#l00016">solve.cpp:16</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a06bb615b346dc3b2feef14de6a28b438"><div class="ttname"><a href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">Polynome::a</a></div><div class="ttdeci">double a</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00013">solver.h:13</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a16de1b5783638cb3b1edc073822ee806"><div class="ttname"><a href="struct_polynome.html#a16de1b5783638cb3b1edc073822ee806">Polynome::c</a></div><div class="ttdeci">double c</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00013">solver.h:13</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a8ab774e8291e831dbc1df82105f6e5f6"><div class="ttname"><a href="struct_polynome.html#a8ab774e8291e831dbc1df82105f6e5f6">Polynome::x2</a></div><div class="ttdeci">double x2</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00014">solver.h:14</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a8e8df276fe3fe97acf94775ef804e3a5"><div class="ttname"><a href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">Polynome::b</a></div><div class="ttdeci">double b</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00013">solver.h:13</a></div></div>
+<div class="ttc" id="astruct_polynome_html_adf12a1424aef053eafbd6474eb853fee"><div class="ttname"><a href="struct_polynome.html#adf12a1424aef053eafbd6474eb853fee">Polynome::x1</a></div><div class="ttdeci">double x1</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00014">solver.h:14</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="solver_8h_source.html#l00007">ERROR</a>, and <a class="el" href="solve_8cpp_source.html#l00025">is_equal()</a>.</p>
+<p class="reference">References <a class="el" href="solver_8h_source.html#l00013">Polynome::a</a>, <a class="el" href="solver_8h_source.html#l00013">Polynome::b</a>, <a class="el" href="solver_8h_source.html#l00013">Polynome::c</a>, <a class="el" href="solve_8cpp_source.html#l00016">isequal()</a>, <a class="el" href="solver_8h_source.html#l00014">Polynome::x1</a>, and <a class="el" href="solver_8h_source.html#l00014">Polynome::x2</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="inout_8cpp_source.html#l00016">print_roots()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="inout_8cpp_source.html#l00018">print_roots()</a>.</p>
 
 </div>
 </div>

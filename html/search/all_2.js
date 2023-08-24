@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['maxlen_2',['MAXLEN',['../main_8cpp.html#a09aab0719908e5f01c77d290451579fc',1,'main.cpp']]]
+  ['c_0',['c',['../struct_polynome.html#a16de1b5783638cb3b1edc073822ee806',1,'Polynome::c'],['../struct_test_data.html#a9a09eb8b4f07875540204fb803e83775',1,'TestData::c']]]
 ];

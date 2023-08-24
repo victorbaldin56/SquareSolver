@@ -25,11 +25,8 @@ typedef struct {
 
 /**
  * Solves the quadratic equation a*x^2+b*x+c=0
- * @param roots array of roots filled by this function
- * @param a first coef
- * @param b second coef
- * @param c third coef
- * @return the number of roots or error code -1 
+ * @param eq pointer to a Polynome structure
+ * @return number of roots of the polynome 
 */
 int solve_square(Polynome *eq);
 

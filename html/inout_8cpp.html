@@ -75,18 +75,21 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
 <code>#include &quot;<a class="el" href="solver_8h_source.html">solver.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for inout.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="inout_8cpp__incl.png" border="0" usemap="#ainout_8cpp" alt=""/></div>
 <map name="ainout_8cpp" id="ainout_8cpp">
-<area shape="rect" title=" " alt="" coords="5,5,88,31"/>
-<area shape="rect" title=" " alt="" coords="13,152,80,177"/>
-<area shape="poly" title=" " alt="" coords="46,32,37,79,38,110,43,138,37,139,33,110,32,78,41,31"/>
-<area shape="rect" href="solver_8h.html" title=" " alt="" coords="47,79,121,104"/>
-<area shape="poly" title=" " alt="" coords="55,30,74,65,69,68,50,32"/>
-<area shape="poly" title=" " alt="" coords="80,106,61,141,57,139,75,103"/>
+<area shape="rect" title=" " alt="" coords="14,5,97,31"/>
+<area shape="rect" title=" " alt="" coords="34,152,101,177"/>
+<area shape="poly" title=" " alt="" coords="43,33,16,65,9,84,11,103,24,124,42,142,38,145,20,127,6,105,4,83,12,62,39,29"/>
+<area shape="rect" title=" " alt="" coords="21,79,90,104"/>
+<area shape="poly" title=" " alt="" coords="58,31,58,65,53,65,53,31"/>
+<area shape="rect" href="solver_8h.html" title=" " alt="" coords="115,79,188,104"/>
+<area shape="poly" title=" " alt="" coords="72,29,126,68,123,72,69,33"/>
+<area shape="poly" title=" " alt="" coords="139,106,93,145,90,141,136,102"/>
 </map>
 </div>
 </div>
@@ -94,14 +97,14 @@ Include dependency graph for inout.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a06e4024597343ff720c471b80ff3edaf" id="r_a06e4024597343ff720c471b80ff3edaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inout_8cpp.html#a06e4024597343ff720c471b80ff3edaf">input_coeffs</a> (double *a, double *b, double *c)</td></tr>
-<tr class="separator:a06e4024597343ff720c471b80ff3edaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4b551d61948a4d88abf477a0187d229" id="r_ae4b551d61948a4d88abf477a0187d229"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inout_8cpp.html#ae4b551d61948a4d88abf477a0187d229">print_roots</a> (double roots[], const double a, const double b, const double c)</td></tr>
-<tr class="separator:ae4b551d61948a4d88abf477a0187d229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceb7eff54ff201a50dc91f76aa887881" id="r_aceb7eff54ff201a50dc91f76aa887881"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inout_8cpp.html#aceb7eff54ff201a50dc91f76aa887881">input_coeffs</a> (<a class="el" href="struct_polynome.html">Polynome</a> *eq)</td></tr>
+<tr class="separator:aceb7eff54ff201a50dc91f76aa887881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e26f46ab16a1765d78cab2392e33aff" id="r_a3e26f46ab16a1765d78cab2392e33aff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inout_8cpp.html#a3e26f46ab16a1765d78cab2392e33aff">print_roots</a> (<a class="el" href="struct_polynome.html">Polynome</a> *eq)</td></tr>
+<tr class="separator:a3e26f46ab16a1765d78cab2392e33aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a06e4024597343ff720c471b80ff3edaf" name="a06e4024597343ff720c471b80ff3edaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06e4024597343ff720c471b80ff3edaf">&#9670;&#160;</a></span>input_coeffs()</h2>
+<a id="aceb7eff54ff201a50dc91f76aa887881" name="aceb7eff54ff201a50dc91f76aa887881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceb7eff54ff201a50dc91f76aa887881">&#9670;&#160;</a></span>input_coeffs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -109,25 +112,9 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void input_coeffs </td>
           <td>(</td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="struct_polynome.html">Polynome</a> *&#160;</td>
+          <td class="paramname"><em>eq</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double *&#160;</td>
-          <td class="paramname"><em>c</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -140,23 +127,29 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="inout_8cpp_source.html#l00006">6</a> of file <a class="el" href="inout_8cpp_source.html">inout.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    6</span>                                                   {</div>
-<div class="line"><span class="lineno">    7</span>    printf(<span class="stringliteral">&quot;Enter a, b, c: &quot;</span>);</div>
-<div class="line"><span class="lineno">    8</span> </div>
-<div class="line"><span class="lineno">    9</span>    <span class="keywordflow">while</span> (scanf(<span class="stringliteral">&quot;%lf %lf %lf&quot;</span>, a, b, c) != 3) { <span class="comment">// EOF?</span></div>
-<div class="line"><span class="lineno">   10</span>        clear_buf();</div>
-<div class="line"><span class="lineno">   11</span>        printf(<span class="stringliteral">&quot;Wrong input, try again\n&quot;</span>); <span class="comment">// retry</span></div>
-<div class="line"><span class="lineno">   12</span>    }</div>
-<div class="line"><span class="lineno">   13</span>    </div>
-<div class="line"><span class="lineno">   14</span>}</div>
+<p class="definition">Definition at line <a class="el" href="inout_8cpp_source.html#l00007">7</a> of file <a class="el" href="inout_8cpp_source.html">inout.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>                                {</div>
+<div class="line"><span class="lineno">    8</span>    assert(eq != NULL);</div>
+<div class="line"><span class="lineno">    9</span>    printf(<span class="stringliteral">&quot;Enter a, b, c: &quot;</span>);</div>
+<div class="line"><span class="lineno">   10</span> </div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">while</span> (scanf(<span class="stringliteral">&quot;%lf %lf %lf&quot;</span>, &amp;eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">a</a>, &amp;eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">b</a>, &amp;eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a16de1b5783638cb3b1edc073822ee806">c</a>) != 3) { <span class="comment">// EOF?</span></div>
+<div class="line"><span class="lineno">   12</span>        clear_buf();</div>
+<div class="line"><span class="lineno">   13</span>        printf(<span class="stringliteral">&quot;Wrong input, try again\n&quot;</span>); <span class="comment">// retry</span></div>
+<div class="line"><span class="lineno">   14</span>    }</div>
+<div class="line"><span class="lineno">   15</span>    </div>
+<div class="line"><span class="lineno">   16</span>}</div>
+<div class="ttc" id="astruct_polynome_html_a06bb615b346dc3b2feef14de6a28b438"><div class="ttname"><a href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">Polynome::a</a></div><div class="ttdeci">double a</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00013">solver.h:13</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a16de1b5783638cb3b1edc073822ee806"><div class="ttname"><a href="struct_polynome.html#a16de1b5783638cb3b1edc073822ee806">Polynome::c</a></div><div class="ttdeci">double c</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00013">solver.h:13</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a8e8df276fe3fe97acf94775ef804e3a5"><div class="ttname"><a href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">Polynome::b</a></div><div class="ttdeci">double b</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00013">solver.h:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
+<p class="reference">References <a class="el" href="solver_8h_source.html#l00013">Polynome::a</a>, <a class="el" href="solver_8h_source.html#l00013">Polynome::b</a>, and <a class="el" href="solver_8h_source.html#l00013">Polynome::c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 
 </div>
 </div>
-<a id="ae4b551d61948a4d88abf477a0187d229" name="ae4b551d61948a4d88abf477a0187d229"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4b551d61948a4d88abf477a0187d229">&#9670;&#160;</a></span>print_roots()</h2>
+<a id="a3e26f46ab16a1765d78cab2392e33aff" name="a3e26f46ab16a1765d78cab2392e33aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e26f46ab16a1765d78cab2392e33aff">&#9670;&#160;</a></span>print_roots()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,62 +157,43 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void print_roots </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>roots</em>[], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="struct_polynome.html">Polynome</a> *&#160;</td>
+          <td class="paramname"><em>eq</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>c</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="inout_8cpp_source.html#l00016">16</a> of file <a class="el" href="inout_8cpp_source.html">inout.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>                                                                                 {</div>
-<div class="line"><span class="lineno">   17</span>    </div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">switch</span> (<a class="code hl_function" href="solve_8cpp.html#aaf49f2e07bc953a77984b50601702788">solve_square</a>(roots, a, b, c)) {</div>
-<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">case</span> 0:</div>
-<div class="line"><span class="lineno">   20</span>            printf(<span class="stringliteral">&quot;No roots&quot;</span>);</div>
-<div class="line"><span class="lineno">   21</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><span class="lineno">   23</span>            printf(<span class="stringliteral">&quot;Root: %g\n&quot;</span>, roots[0]);</div>
+<p class="definition">Definition at line <a class="el" href="inout_8cpp_source.html#l00018">18</a> of file <a class="el" href="inout_8cpp_source.html">inout.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>                               {</div>
+<div class="line"><span class="lineno">   19</span>    assert(eq != NULL);</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">switch</span> (<a class="code hl_function" href="solve_8cpp.html#a95833bf7c65e1ea7a16131262f2fdf89">solve_square</a>(eq)) {</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">   23</span>            printf(<span class="stringliteral">&quot;No roots\n&quot;</span>);</div>
 <div class="line"><span class="lineno">   24</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><span class="lineno">   26</span>            printf(<span class="stringliteral">&quot;Roots: %g %g\n&quot;</span>, roots[0], roots[1]);</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">   26</span>            printf(<span class="stringliteral">&quot;Root: %g\n&quot;</span>, eq-&gt;<a class="code hl_variable" href="struct_polynome.html#adf12a1424aef053eafbd6474eb853fee">x1</a>);</div>
 <div class="line"><span class="lineno">   27</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">case</span> <a class="code hl_variable" href="solver_8h.html#ae831e56053b8abc343b931bc11a63be4">INFINITE</a>:</div>
-<div class="line"><span class="lineno">   29</span>            printf(<span class="stringliteral">&quot;Infinte number of roots\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">   29</span>            printf(<span class="stringliteral">&quot;Roots: %g %g\n&quot;</span>, eq-&gt;<a class="code hl_variable" href="struct_polynome.html#adf12a1424aef053eafbd6474eb853fee">x1</a>, eq-&gt;<a class="code hl_variable" href="struct_polynome.html#a8ab774e8291e831dbc1df82105f6e5f6">x2</a>);</div>
 <div class="line"><span class="lineno">   30</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">   32</span>            printf(<span class="stringliteral">&quot;Error: unknown case\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   33</span>    }</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>}</div>
-<div class="ttc" id="asolve_8cpp_html_aaf49f2e07bc953a77984b50601702788"><div class="ttname"><a href="solve_8cpp.html#aaf49f2e07bc953a77984b50601702788">solve_square</a></div><div class="ttdeci">int solve_square(double roots[], const double a, const double b, const double c)</div><div class="ttdef"><b>Definition</b> <a href="solve_8cpp_source.html#l00030">solve.cpp:30</a></div></div>
-<div class="ttc" id="asolver_8h_html_ae831e56053b8abc343b931bc11a63be4"><div class="ttname"><a href="solver_8h.html#ae831e56053b8abc343b931bc11a63be4">INFINITE</a></div><div class="ttdeci">const int INFINITE</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00006">solver.h:6</a></div></div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">case</span> <a class="code hl_variable" href="solver_8h.html#a35edd79502e9fd1c58eb07a2ad3f4d0a">SS_INF_ROOTS</a>:</div>
+<div class="line"><span class="lineno">   32</span>            printf(<span class="stringliteral">&quot;Infinte number of roots\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   35</span>            printf(<span class="stringliteral">&quot;Error: unknown case\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>}</div>
+<div class="ttc" id="asolve_8cpp_html_a95833bf7c65e1ea7a16131262f2fdf89"><div class="ttname"><a href="solve_8cpp.html#a95833bf7c65e1ea7a16131262f2fdf89">solve_square</a></div><div class="ttdeci">int solve_square(Polynome *eq)</div><div class="ttdef"><b>Definition</b> <a href="solve_8cpp_source.html#l00022">solve.cpp:22</a></div></div>
+<div class="ttc" id="asolver_8h_html_a35edd79502e9fd1c58eb07a2ad3f4d0a"><div class="ttname"><a href="solver_8h.html#a35edd79502e9fd1c58eb07a2ad3f4d0a">SS_INF_ROOTS</a></div><div class="ttdeci">const int SS_INF_ROOTS</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00006">solver.h:6</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a8ab774e8291e831dbc1df82105f6e5f6"><div class="ttname"><a href="struct_polynome.html#a8ab774e8291e831dbc1df82105f6e5f6">Polynome::x2</a></div><div class="ttdeci">double x2</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00014">solver.h:14</a></div></div>
+<div class="ttc" id="astruct_polynome_html_adf12a1424aef053eafbd6474eb853fee"><div class="ttname"><a href="struct_polynome.html#adf12a1424aef053eafbd6474eb853fee">Polynome::x1</a></div><div class="ttdeci">double x1</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00014">solver.h:14</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="solver_8h_source.html#l00006">INFINITE</a>, and <a class="el" href="solve_8cpp_source.html#l00030">solve_square()</a>.</p>
+<p class="reference">References <a class="el" href="solve_8cpp_source.html#l00022">solve_square()</a>, <a class="el" href="solver_8h_source.html#l00006">SS_INF_ROOTS</a>, <a class="el" href="solver_8h_source.html#l00014">Polynome::x1</a>, and <a class="el" href="solver_8h_source.html#l00014">Polynome::x2</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00008">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 
 </div>
 </div>

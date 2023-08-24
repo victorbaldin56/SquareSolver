@@ -18,17 +18,15 @@ int main(int argc, char *argv[]) {
         return ss_test(test_file);
     }
 
-    if (argc == 2 && !strncmp("--help", argv[1], MAXLEN)) {
-        printf("square_solver solves the quadratic equation ax^2 + bx + c, "
-               "where a, b, c is real numbers\n"
-               "Run ./square_solver and enter coeffitients a, b, c in format \"a b c\"\n");
+    if (argc == 2 && !strncmp("--help", argv[1], MAXLEN)) { //moar help
+        printf("Usage: ./square_solver [opions]\n"
+               "Options:\n");
         return 0;
     }
 
-    Polynome equation;
+    Polynome equation = {};
     Polynome *eq = &equation;
 
-    assert(eq != NULL);
     input_coeffs(eq);
     print_roots(eq);
 
