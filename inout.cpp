@@ -1,31 +1,33 @@
 #include <stdio.h>
+#include <cassert>
 #include "solver.h"
 
 static void clear_buf();
 
-void input_coeffs(double* a, double* b, double* c) {
+void input_coeffs(Polynome *eq) {
+    assert(eq != NULL);
     printf("Enter a, b, c: ");
 
-    while (scanf("%lf %lf %lf", a, b, c) != 3) { // EOF?
+    while (scanf("%lf %lf %lf", &eq->a, &eq->b, &eq->c) != 3) { // EOF?
         clear_buf();
         printf("Wrong input, try again\n"); // retry
     }
     
 }
 
-void print_roots(double roots[], const double a, const double b, const double c) {
+void print_roots(Polynome *eq) {
     
-    switch (solve_square(roots, a, b, c)) {
+    switch (solve_square(eq)) {
         case 0:
-            printf("No roots");
+            printf("No roots\n");
             break;
         case 1:
-            printf("Root: %g\n", roots[0]);
+            printf("Root: %g\n", eq->x1);
             break;
         case 2:
-            printf("Roots: %g %g\n", roots[0], roots[1]);
+            printf("Roots: %g %g\n", eq->x1, eq->x2);
             break;
-        case INFINITE:
+        case SS_INF_ROOTS:
             printf("Infinte number of roots\n");
             break;
         default:

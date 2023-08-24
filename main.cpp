@@ -25,10 +25,12 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
-    double a = NAN, b = NAN, c = NAN;
-    input_coeffs(&a, &b, &c);
-    double roots[2] = {NAN, NAN};
-    print_roots(roots, a, b, c);
+    Polynome equation;
+    Polynome *eq = &equation;
+
+    assert(eq != NULL);
+    input_coeffs(eq);
+    print_roots(eq);
 
     return 0;
 }

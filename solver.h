@@ -3,8 +3,25 @@
 
 #include <stdio.h>
 
-const int INFINITE = 3; // бесконечное число корней
+const int SS_INF_ROOTS = 3; // бесконечное число корней
 const int ERROR = -1;
+
+/**
+ * 
+*/
+typedef struct {
+    double a, b, c;
+    double x1, x2;
+} Polynome;
+
+/**
+ * 
+*/
+typedef struct {
+    double a, b, c;
+    double x1_ref, x2_ref;
+    int nroots_ref;
+} TestData;
 
 /**
  * Solves the quadratic equation a*x^2+b*x+c=0
@@ -14,7 +31,7 @@ const int ERROR = -1;
  * @param c third coef
  * @return the number of roots or error code -1 
 */
-int solve_square(double roots[], const double a, const double b, const double c);
+int solve_square(Polynome *eq);
 
 /**
  * Two doubles comparison
@@ -22,7 +39,7 @@ int solve_square(double roots[], const double a, const double b, const double c)
  * @param b
  * @return 1 if close enough, 0 if not  
 */
-bool is_equal(double a, double b);
+bool isequal(double a, double b);
 
 /**
  * Tests solve_square until the end of test file
@@ -36,11 +53,11 @@ int ss_test(FILE *test_file);
  * @param b pointer to b
  * @param c pointer to c
 */
-void input_coeffs(double* a, double* b, double* c);
+void input_coeffs(Polynome *eq);
 
 /**
  * 
 */
-void print_roots(double roots[], const double a, const double b, const double c);
+void print_roots(Polynome *eq);
 
 #endif // MY_SOLVER_H
