@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include <cassert>
+#include <assert.h>
 #include "solver.h"
+#include "colors.h"
 
 /**
  * Unit test for solve_square function
@@ -47,6 +48,13 @@ int ss_test(FILE *test_file) {
             succeed++;
         }                        
     }
+    
+    if (succeed == num) {
+        printf(FG_GREEN);
+    }
+    else {
+        printf(FG_RED);
+    }
 
     printf("%d/%d tests succeed\n", succeed, num);
 
@@ -67,6 +75,7 @@ static int run_test(int num, TestData *data) {
     if (!isequal(eq->x1, data->x1_ref) || 
         !isequal(eq->x2, data->x2_ref) || 
                     nroots != data->nroots_ref) {
+        printf(FG_RED);
         printf("TEST %d FAILED: "
                "a = %g, b = %g, c = %g\n"
                "Received: %g, %g, %d\n" 

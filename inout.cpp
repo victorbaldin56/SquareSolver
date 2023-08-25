@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <cassert>
+#include <assert.h>
 #include "solver.h"
+#include "colors.h"
 
 static void clear_buf();
 
@@ -10,7 +11,9 @@ void input_coeffs(Polynome *eq) {
 
     while (scanf("%lf %lf %lf", &eq->a, &eq->b, &eq->c) != 3) { // EOF?
         clear_buf();
+        printf(FG_RED);
         printf("Wrong input, try again\n"); // retry
+        printf(RESET);
     }
     
 }
