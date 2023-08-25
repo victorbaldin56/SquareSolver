@@ -118,11 +118,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Tests solve_square until the end of test file </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">test_file</td><td>pointer to the file with reference values </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-1 in case of error, otherwise 0 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>pointer to a </td></tr>
-    <tr><td class="paramname">b</td><td>pointer to b </td></tr>
-    <tr><td class="paramname">c</td><td>pointer to c </td></tr>
+    <tr><td class="paramname">eq</td><td>pointer to a <a class="el" href="struct_polynome.html">Polynome</a> structure Inputs coeffs of the given polynome </td></tr>
   </table>
   </dd>
 </dl>
@@ -138,11 +143,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   14</span>    }</div>
 <div class="line"><span class="lineno">   15</span>    </div>
 <div class="line"><span class="lineno">   16</span>}</div>
-<div class="ttc" id="astruct_polynome_html_a06bb615b346dc3b2feef14de6a28b438"><div class="ttname"><a href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">Polynome::a</a></div><div class="ttdeci">double a</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00013">solver.h:13</a></div></div>
-<div class="ttc" id="astruct_polynome_html_a16de1b5783638cb3b1edc073822ee806"><div class="ttname"><a href="struct_polynome.html#a16de1b5783638cb3b1edc073822ee806">Polynome::c</a></div><div class="ttdeci">double c</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00013">solver.h:13</a></div></div>
-<div class="ttc" id="astruct_polynome_html_a8e8df276fe3fe97acf94775ef804e3a5"><div class="ttname"><a href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">Polynome::b</a></div><div class="ttdeci">double b</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00013">solver.h:13</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a06bb615b346dc3b2feef14de6a28b438"><div class="ttname"><a href="struct_polynome.html#a06bb615b346dc3b2feef14de6a28b438">Polynome::a</a></div><div class="ttdeci">double a</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00015">solver.h:15</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a16de1b5783638cb3b1edc073822ee806"><div class="ttname"><a href="struct_polynome.html#a16de1b5783638cb3b1edc073822ee806">Polynome::c</a></div><div class="ttdeci">double c</div><div class="ttdoc">This is coeffs.</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00015">solver.h:15</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a8e8df276fe3fe97acf94775ef804e3a5"><div class="ttname"><a href="struct_polynome.html#a8e8df276fe3fe97acf94775ef804e3a5">Polynome::b</a></div><div class="ttdeci">double b</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00015">solver.h:15</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="solver_8h_source.html#l00013">Polynome::a</a>, <a class="el" href="solver_8h_source.html#l00013">Polynome::b</a>, and <a class="el" href="solver_8h_source.html#l00013">Polynome::c</a>.</p>
+<p class="reference">References <a class="el" href="solver_8h_source.html#l00015">Polynome::a</a>, <a class="el" href="solver_8h_source.html#l00015">Polynome::b</a>, and <a class="el" href="solver_8h_source.html#l00015">Polynome::c</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 
@@ -163,6 +168,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eq</td><td>pointer to a <a class="el" href="struct_polynome.html">Polynome</a> structure </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p class="definition">Definition at line <a class="el" href="inout_8cpp_source.html#l00018">18</a> of file <a class="el" href="inout_8cpp_source.html">inout.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   18</span>                               {</div>
@@ -186,12 +197,12 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   36</span>    }</div>
 <div class="line"><span class="lineno">   37</span> </div>
 <div class="line"><span class="lineno">   38</span>}</div>
-<div class="ttc" id="asolve_8cpp_html_a95833bf7c65e1ea7a16131262f2fdf89"><div class="ttname"><a href="solve_8cpp.html#a95833bf7c65e1ea7a16131262f2fdf89">solve_square</a></div><div class="ttdeci">int solve_square(Polynome *eq)</div><div class="ttdef"><b>Definition</b> <a href="solve_8cpp_source.html#l00022">solve.cpp:22</a></div></div>
-<div class="ttc" id="asolver_8h_html_a35edd79502e9fd1c58eb07a2ad3f4d0a"><div class="ttname"><a href="solver_8h.html#a35edd79502e9fd1c58eb07a2ad3f4d0a">SS_INF_ROOTS</a></div><div class="ttdeci">const int SS_INF_ROOTS</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00006">solver.h:6</a></div></div>
-<div class="ttc" id="astruct_polynome_html_a8ab774e8291e831dbc1df82105f6e5f6"><div class="ttname"><a href="struct_polynome.html#a8ab774e8291e831dbc1df82105f6e5f6">Polynome::x2</a></div><div class="ttdeci">double x2</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00014">solver.h:14</a></div></div>
-<div class="ttc" id="astruct_polynome_html_adf12a1424aef053eafbd6474eb853fee"><div class="ttname"><a href="struct_polynome.html#adf12a1424aef053eafbd6474eb853fee">Polynome::x1</a></div><div class="ttdeci">double x1</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00014">solver.h:14</a></div></div>
+<div class="ttc" id="asolve_8cpp_html_a95833bf7c65e1ea7a16131262f2fdf89"><div class="ttname"><a href="solve_8cpp.html#a95833bf7c65e1ea7a16131262f2fdf89">solve_square</a></div><div class="ttdeci">int solve_square(Polynome *eq)</div><div class="ttdef"><b>Definition</b> <a href="solve_8cpp_source.html#l00018">solve.cpp:18</a></div></div>
+<div class="ttc" id="asolver_8h_html_a35edd79502e9fd1c58eb07a2ad3f4d0a"><div class="ttname"><a href="solver_8h.html#a35edd79502e9fd1c58eb07a2ad3f4d0a">SS_INF_ROOTS</a></div><div class="ttdeci">const int SS_INF_ROOTS</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00008">solver.h:8</a></div></div>
+<div class="ttc" id="astruct_polynome_html_a8ab774e8291e831dbc1df82105f6e5f6"><div class="ttname"><a href="struct_polynome.html#a8ab774e8291e831dbc1df82105f6e5f6">Polynome::x2</a></div><div class="ttdeci">double x2</div><div class="ttdoc">This is roots.</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00016">solver.h:16</a></div></div>
+<div class="ttc" id="astruct_polynome_html_adf12a1424aef053eafbd6474eb853fee"><div class="ttname"><a href="struct_polynome.html#adf12a1424aef053eafbd6474eb853fee">Polynome::x1</a></div><div class="ttdeci">double x1</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00016">solver.h:16</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="solve_8cpp_source.html#l00022">solve_square()</a>, <a class="el" href="solver_8h_source.html#l00006">SS_INF_ROOTS</a>, <a class="el" href="solver_8h_source.html#l00014">Polynome::x1</a>, and <a class="el" href="solver_8h_source.html#l00014">Polynome::x2</a>.</p>
+<p class="reference">References <a class="el" href="solve_8cpp_source.html#l00018">solve_square()</a>, <a class="el" href="solver_8h_source.html#l00008">SS_INF_ROOTS</a>, <a class="el" href="solver_8h_source.html#l00016">Polynome::x1</a>, and <a class="el" href="solver_8h_source.html#l00016">Polynome::x2</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 

@@ -1,15 +1,11 @@
 #include <math.h>
-#include <cassert>
+#include <assert.h>
 #include "solver.h"
 
 // How many NaN exist --answered
 // Color output. 
 /**
- * Case of linear equation b*x+c=0
- * @param roots array of roots
- * @param b first coef
- * @param c second coef
- * @return the number of roots or error code -1
+ * 
 */
 static int do_solve_linear(Polynome *eq);
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maxlen_0',['MAXLEN',['../main_8cpp.html#ae6648cd71a8bd49d58ae8ed33ba910d1',1,'main.cpp']]]
+  ['ndebug_0',['NDEBUG',['../solver_8h.html#a8de3ed741dadc9c979a4ff17c0a9116e',1,'solver.h']]]
 ];

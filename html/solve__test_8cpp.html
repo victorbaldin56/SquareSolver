@@ -122,65 +122,58 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Tests solve_square until the end of test file </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">test_file</td><td>pointer to the file with reference values </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>-1 in case of error, otherwise 0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="solve__test_8cpp_source.html#l00018">18</a> of file <a class="el" href="solve__test_8cpp_source.html">solve_test.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>                             {</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">int</span> test_res = 0;</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordtype">int</span> num = 0; <span class="comment">// test number</span></div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordtype">int</span> succeed = 0; <span class="comment">// number of succeed tests</span></div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>    <a class="code hl_struct" href="struct_test_data.html">TestData</a> test_data = {};</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_struct" href="struct_test_data.html">TestData</a> *data = &amp;test_data;</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    fscanf(test_file, <span class="stringliteral">&quot;a,b,c,root1,root2,ans&quot;</span>);</div>
-<div class="line"><span class="lineno">   27</span>    </div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">while</span> (!feof(test_file)) {</div>
-<div class="line"><span class="lineno">   29</span>        <span class="keywordtype">int</span> n_arg = fscanf(test_file, </div>
-<div class="line"><span class="lineno">   30</span>            <span class="stringliteral">&quot;%lf, %lf, %lf, %lf, %lf, %d&quot;</span>,</div>
-<div class="line"><span class="lineno">   31</span>            &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#aad799d7f57ef13878ea48021138ca8f5">a</a>), &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#a889e4eafa10e220f270240246fc48355">b</a>), &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#a9a09eb8b4f07875540204fb803e83775">c</a>), </div>
-<div class="line"><span class="lineno">   32</span>            &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#a99d1af94fcfdf54d0c706110ddfd85b2">x1_ref</a>), &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#a645995d5517e7c4b8b0f2bfc499a05b6">x2_ref</a>), &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#a380c8254299f79e613fb1e908d26c61b">nroots_ref</a>)); <span class="comment">//\n in end of file</span></div>
-<div class="line"><span class="lineno">   33</span>        </div>
-<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">if</span> (n_arg == EOF) {</div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   36</span>        }</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (n_arg != 6) {</div>
-<div class="line"><span class="lineno">   39</span>            printf(<span class="stringliteral">&quot;wrong input in test file\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">   41</span>        };</div>
-<div class="line"><span class="lineno">   42</span>        </div>
-<div class="line"><span class="lineno">   43</span>        num++;</div>
-<div class="line"><span class="lineno">   44</span>        </div>
-<div class="line"><span class="lineno">   45</span>        assert(data != NULL);</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">if</span> (run_test(num, data) == -1) {</div>
-<div class="line"><span class="lineno">   48</span>            test_res = -1; </div>
-<div class="line"><span class="lineno">   49</span>        }</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   51</span>            succeed++;</div>
-<div class="line"><span class="lineno">   52</span>        }                        </div>
-<div class="line"><span class="lineno">   53</span>    }</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>    printf(<span class="stringliteral">&quot;%d/%d tests succeed\n&quot;</span>, succeed, num);</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> test_res;</div>
-<div class="line"><span class="lineno">   58</span>}</div>
-<div class="ttc" id="astruct_test_data_html"><div class="ttname"><a href="struct_test_data.html">TestData</a></div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00020">solver.h:20</a></div></div>
-<div class="ttc" id="astruct_test_data_html_a380c8254299f79e613fb1e908d26c61b"><div class="ttname"><a href="struct_test_data.html#a380c8254299f79e613fb1e908d26c61b">TestData::nroots_ref</a></div><div class="ttdeci">int nroots_ref</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00023">solver.h:23</a></div></div>
-<div class="ttc" id="astruct_test_data_html_a645995d5517e7c4b8b0f2bfc499a05b6"><div class="ttname"><a href="struct_test_data.html#a645995d5517e7c4b8b0f2bfc499a05b6">TestData::x2_ref</a></div><div class="ttdeci">double x2_ref</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00022">solver.h:22</a></div></div>
-<div class="ttc" id="astruct_test_data_html_a889e4eafa10e220f270240246fc48355"><div class="ttname"><a href="struct_test_data.html#a889e4eafa10e220f270240246fc48355">TestData::b</a></div><div class="ttdeci">double b</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00021">solver.h:21</a></div></div>
-<div class="ttc" id="astruct_test_data_html_a99d1af94fcfdf54d0c706110ddfd85b2"><div class="ttname"><a href="struct_test_data.html#a99d1af94fcfdf54d0c706110ddfd85b2">TestData::x1_ref</a></div><div class="ttdeci">double x1_ref</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00022">solver.h:22</a></div></div>
-<div class="ttc" id="astruct_test_data_html_a9a09eb8b4f07875540204fb803e83775"><div class="ttname"><a href="struct_test_data.html#a9a09eb8b4f07875540204fb803e83775">TestData::c</a></div><div class="ttdeci">double c</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00021">solver.h:21</a></div></div>
-<div class="ttc" id="astruct_test_data_html_aad799d7f57ef13878ea48021138ca8f5"><div class="ttname"><a href="struct_test_data.html#aad799d7f57ef13878ea48021138ca8f5">TestData::a</a></div><div class="ttdeci">double a</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00021">solver.h:21</a></div></div>
+<p class="definition">Definition at line <a class="el" href="solve__test_8cpp_source.html#l00014">14</a> of file <a class="el" href="solve__test_8cpp_source.html">solve_test.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>                             {</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordtype">int</span> test_res = 0;</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordtype">int</span> num = 0; <span class="comment">// test number</span></div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">int</span> succeed = 0; <span class="comment">// number of succeed tests</span></div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_struct" href="struct_test_data.html">TestData</a> test_data = {};</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_struct" href="struct_test_data.html">TestData</a> *data = &amp;test_data;</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    fscanf(test_file, <span class="stringliteral">&quot;a,b,c,root1,root2,ans&quot;</span>);</div>
+<div class="line"><span class="lineno">   23</span>    </div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">while</span> (!feof(test_file)) {</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordtype">int</span> n_arg = fscanf(test_file, </div>
+<div class="line"><span class="lineno">   26</span>            <span class="stringliteral">&quot;%lf, %lf, %lf, %lf, %lf, %d&quot;</span>,</div>
+<div class="line"><span class="lineno">   27</span>            &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#aad799d7f57ef13878ea48021138ca8f5">a</a>), &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#a889e4eafa10e220f270240246fc48355">b</a>), &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#a9a09eb8b4f07875540204fb803e83775">c</a>), </div>
+<div class="line"><span class="lineno">   28</span>            &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#a99d1af94fcfdf54d0c706110ddfd85b2">x1_ref</a>), &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#a645995d5517e7c4b8b0f2bfc499a05b6">x2_ref</a>), &amp;(data-&gt;<a class="code hl_variable" href="struct_test_data.html#a380c8254299f79e613fb1e908d26c61b">nroots_ref</a>)); <span class="comment">//\n in end of file</span></div>
+<div class="line"><span class="lineno">   29</span>        </div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> (n_arg == EOF) {</div>
+<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">if</span> (n_arg != 6) {</div>
+<div class="line"><span class="lineno">   35</span>            printf(<span class="stringliteral">&quot;wrong input in test file\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   37</span>        };</div>
+<div class="line"><span class="lineno">   38</span>        </div>
+<div class="line"><span class="lineno">   39</span>        num++;</div>
+<div class="line"><span class="lineno">   40</span>        </div>
+<div class="line"><span class="lineno">   41</span>        assert(data != NULL);</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span> (run_test(num, data) == -1) {</div>
+<div class="line"><span class="lineno">   44</span>            test_res = -1; </div>
+<div class="line"><span class="lineno">   45</span>        }</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   47</span>            succeed++;</div>
+<div class="line"><span class="lineno">   48</span>        }                        </div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    printf(<span class="stringliteral">&quot;%d/%d tests succeed\n&quot;</span>, succeed, num);</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> test_res;</div>
+<div class="line"><span class="lineno">   54</span>}</div>
+<div class="ttc" id="astruct_test_data_html"><div class="ttname"><a href="struct_test_data.html">TestData</a></div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00022">solver.h:22</a></div></div>
+<div class="ttc" id="astruct_test_data_html_a380c8254299f79e613fb1e908d26c61b"><div class="ttname"><a href="struct_test_data.html#a380c8254299f79e613fb1e908d26c61b">TestData::nroots_ref</a></div><div class="ttdeci">int nroots_ref</div><div class="ttdoc">This is reference value of number of roots.</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00025">solver.h:25</a></div></div>
+<div class="ttc" id="astruct_test_data_html_a645995d5517e7c4b8b0f2bfc499a05b6"><div class="ttname"><a href="struct_test_data.html#a645995d5517e7c4b8b0f2bfc499a05b6">TestData::x2_ref</a></div><div class="ttdeci">double x2_ref</div><div class="ttdoc">This is reference values of roots.</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00024">solver.h:24</a></div></div>
+<div class="ttc" id="astruct_test_data_html_a889e4eafa10e220f270240246fc48355"><div class="ttname"><a href="struct_test_data.html#a889e4eafa10e220f270240246fc48355">TestData::b</a></div><div class="ttdeci">double b</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00023">solver.h:23</a></div></div>
+<div class="ttc" id="astruct_test_data_html_a99d1af94fcfdf54d0c706110ddfd85b2"><div class="ttname"><a href="struct_test_data.html#a99d1af94fcfdf54d0c706110ddfd85b2">TestData::x1_ref</a></div><div class="ttdeci">double x1_ref</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00024">solver.h:24</a></div></div>
+<div class="ttc" id="astruct_test_data_html_a9a09eb8b4f07875540204fb803e83775"><div class="ttname"><a href="struct_test_data.html#a9a09eb8b4f07875540204fb803e83775">TestData::c</a></div><div class="ttdeci">double c</div><div class="ttdoc">This is quadratic equation coeffs.</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00023">solver.h:23</a></div></div>
+<div class="ttc" id="astruct_test_data_html_aad799d7f57ef13878ea48021138ca8f5"><div class="ttname"><a href="struct_test_data.html#aad799d7f57ef13878ea48021138ca8f5">TestData::a</a></div><div class="ttdeci">double a</div><div class="ttdef"><b>Definition</b> <a href="solver_8h_source.html#l00023">solver.h:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="solver_8h_source.html#l00021">TestData::a</a>, <a class="el" href="solver_8h_source.html#l00021">TestData::b</a>, <a class="el" href="solver_8h_source.html#l00021">TestData::c</a>, <a class="el" href="solver_8h_source.html#l00023">TestData::nroots_ref</a>, <a class="el" href="solver_8h_source.html#l00022">TestData::x1_ref</a>, and <a class="el" href="solver_8h_source.html#l00022">TestData::x2_ref</a>.</p>
+<p class="reference">References <a class="el" href="solver_8h_source.html#l00023">TestData::a</a>, <a class="el" href="solver_8h_source.html#l00023">TestData::b</a>, <a class="el" href="solver_8h_source.html#l00023">TestData::c</a>, <a class="el" href="solver_8h_source.html#l00025">TestData::nroots_ref</a>, <a class="el" href="solver_8h_source.html#l00024">TestData::x1_ref</a>, and <a class="el" href="solver_8h_source.html#l00024">TestData::x2_ref</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00009">main()</a>.</p>
 

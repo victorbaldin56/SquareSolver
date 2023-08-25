@@ -6,12 +6,8 @@
 
 /**
  * Unit test for solve_square function
- * @param a first coef
- * @param b second coef
- * @param c third coef
- * @param roots_ref reference roots
- * @param nroots_ref reference return value of solve_square()
- * @return 0 if all values are equal to the reference, -1 if not
+ * @param num Number of current test
+ * @param data The structure contains test reference data
 */
 static int run_test(int num, TestData *data);
 

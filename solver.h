@@ -1,26 +1,28 @@
 #ifndef MY_SOLVER_H
-#define MY_SOLVER_H 1
+#define MY_SOLVER_H
 
 #include <stdio.h>
 
-const int SS_INF_ROOTS = 3; // бесконечное число корней
+#define NDEBUG
+
+const int SS_INF_ROOTS = 3;
 const int ERROR = -1;
 
 /**
- * 
+ * Structure of coeffs and roots of the polynome
 */
 typedef struct {
-    double a, b, c;
-    double x1, x2;
+    double a, b, c; ///< This is coeffs
+    double x1, x2;  ///< This is roots
 } Polynome;
 
 /**
- * 
+ * Structure of reference values for test
 */
 typedef struct {
-    double a, b, c;
-    double x1_ref, x2_ref;
-    int nroots_ref;
+    double a, b, c;        ///< This is quadratic equation coeffs
+    double x1_ref, x2_ref; ///< This is reference values of roots
+    int nroots_ref;        ///< This is reference value of number of roots
 } TestData;
 
 /**
