@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     printf("# Square equation solver\n"
            "# (c) Victor Baldin, 2023\n");
     
-    #ifdef DEBUG
+    #ifndef NDEBUG
     if (argc == 3 && !strncmp("--test", argv[1], MAXLEN)) { 
         // run tests
         printf("# Running test\n");
