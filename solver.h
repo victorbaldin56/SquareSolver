@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-#define NDEBUG
+#define DEBUG
 
 const int SS_INF_ROOTS = 3;
 const int ERROR = -1;
