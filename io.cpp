@@ -51,3 +51,4 @@ static void clear_buf() {
         c = getchar();
     }
 }
+
