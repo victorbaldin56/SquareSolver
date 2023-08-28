@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
     }
     #endif // NDEBUG
 
-    if (argc == 2 && !strncmp("--help", argv[1], MAXLEN)) { //moar help
+    if (argc == 2 && !strncmp("--help", argv[1], MAXLEN)) {
         printf("Usage: ./square_solver [opions]\n"
                "Options:\n");
         return 0;

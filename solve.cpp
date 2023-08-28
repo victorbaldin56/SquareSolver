@@ -1,9 +1,7 @@
 #include <math.h>
 #include <assert.h>
 #include "solver.h"
-
-// How many NaN exist --answered
-// Color output. 
+ 
 /**
  * 
 */

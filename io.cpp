@@ -10,13 +10,13 @@ int input_coeffs(Polynome *eq) {
     printf("Enter a, b, c: ");
     int n_arg = 0;
 
-    while ((n_arg = scanf("%lf %lf %lf", &eq->a, &eq->b, &eq->c)) != 3) { // EOF?
+    while ((n_arg = scanf("%lf %lf %lf", &eq->a, &eq->b, &eq->c)) != 3) {
         if (n_arg == EOF) {
             return -1;
         }
         clear_buf();
         printf(FG_RED);
-        printf("Wrong input, try again\n"); // retry
+        printf("Wrong input, try again\n");
         printf(RESET);
     }
     
