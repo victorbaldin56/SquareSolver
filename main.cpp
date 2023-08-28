@@ -4,7 +4,7 @@
 #include <assert.h>
 #include "solver.h"
 
-const int MAXLEN = 1000; // max lenght of compared strings
+const int MAXLEN = 10000; // max lenght of compared strings
 
 int main(int argc, char *argv[]) {
     printf("# Square equation solver\n"
