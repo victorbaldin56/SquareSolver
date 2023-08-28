@@ -4,7 +4,7 @@ The final program compiled from sources can solve square or linear equation $ax^
 **in real numbers**, where $a, b, c$ is **real numbers**.
 ## Building the project
 To build the project, you need to clone this repository to your local directory and build
-with . To do this, run:
+with ```make```. To do this, run:
 ```
 git clone https://github.com/victorbaldin56/SquareSolver.git
 make
