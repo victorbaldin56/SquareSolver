@@ -42,7 +42,7 @@ void print_roots(Polynome *eq) {
 
 static void clear_buf() {
     int c = 0;
-    while (c != '\n') {
+    while (c != '\n' && c != EOF) {
         c = getchar();
     }
 }

@@ -27,10 +27,9 @@ int main(int argc, char *argv[]) {
     }
 
     Polynome equation = {};
-    Polynome *eq = &equation;
 
-    input_coeffs(eq);
-    print_roots(eq);
+    input_coeffs(&equation);
+    print_roots(&equation);
 
     return 0;
 }

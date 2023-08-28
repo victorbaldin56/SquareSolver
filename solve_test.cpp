@@ -24,9 +24,9 @@ int ss_test(FILE *test_file) {
     
     while (!feof(test_file)) {
         int n_arg = fscanf(test_file, 
-            "%lf, %lf, %lf, %lf, %lf, %d",
-            &(data->a), &(data->b), &(data->c), 
-            &(data->x1_ref), &(data->x2_ref), &(data->nroots_ref)); //\n in end of file
+                           "%lf, %lf, %lf, %lf, %lf, %d",
+                            &(data->a), &(data->b), &(data->c), 
+                            &(data->x1_ref), &(data->x2_ref), &(data->nroots_ref));
         
         if (n_arg == EOF) {
             break;
