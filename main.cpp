@@ -15,6 +15,9 @@ int main(int argc, char *argv[]) {
         // run tests
         printf("# Running test\n");
         FILE *test_file = fopen(argv[2], "r");
+        if(!test_file) {
+            perror(""); // Why
+        }
         assert(test_file != NULL);
         return ss_test(test_file);
     }

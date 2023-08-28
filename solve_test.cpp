@@ -14,8 +14,10 @@ static int run_test(int num, TestData *data);
 
 int ss_test(FILE *test_file) {
     int test_res = 0;
-    int num = 0; // test number
+    int num = 0;     // test number
     int succeed = 0; // number of succeed tests
+
+    assert(test_file != NULL);
 
     TestData test_data = {};
     TestData *data = &test_data;

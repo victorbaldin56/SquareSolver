@@ -32,11 +32,13 @@ int solve_square(Polynome *eq) {
         
         if (!isequal(eq->b, 0)) {
             eq->x2 = 0;
-            eq->c = eq->b;
-            eq->b = eq->a;
-            eq->a = 0;
-            do_solve_linear(eq);
-
+            Polynome lin_equation = {};
+            Polynome *leq = &lin_equation;
+            leq->c = eq->b;
+            leq->b = eq->a;
+            leq->a = 0;
+            do_solve_linear(leq);
+            // Doc or back coefs
             return 2;
         }
 
