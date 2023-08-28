@@ -38,6 +38,7 @@ int solve_square(Polynome *eq) {
             leq->b = eq->a;
             leq->a = 0;
             do_solve_linear(leq);
+            eq->x1 = leq->x1;
             // Doc or back coefs
             return 2;
         }

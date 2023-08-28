@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
         printf("# Running test\n");
         FILE *test_file = fopen(argv[2], "r");
         if(!test_file) {
-            perror(""); // Why
+            perror("fopen() failed"); // Why
         }
         assert(test_file != NULL);
         return ss_test(test_file);
@@ -31,8 +31,12 @@ int main(int argc, char *argv[]) {
 
     Polynome equation = {};
 
-    input_coeffs(&equation);
-    print_roots(&equation);
+    if (!input_coeffs(&equation)) {
+        print_roots(&equation);
+    }
+    else {
+        putchar('\n');
+    }
 
     return 0;
 }

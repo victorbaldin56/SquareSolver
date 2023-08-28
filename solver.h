@@ -48,9 +48,9 @@ bool isequal(double a, double b);
 
 /**
  * @param eq pointer to a Polynome structure
- * Inputs coeffs of the given polynome 
+ * Reads coefs from standart input
 */
-void input_coeffs(Polynome *eq);
+int input_coeffs(Polynome *eq);
 
 /**
  * @param eq pointer to a Polynome structure

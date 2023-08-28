@@ -5,17 +5,22 @@
 
 static void clear_buf();
 
-void input_coeffs(Polynome *eq) {
+int input_coeffs(Polynome *eq) {
     assert(eq != NULL);
     printf("Enter a, b, c: ");
+    int n_arg = 0;
 
-    while (scanf("%lf %lf %lf", &eq->a, &eq->b, &eq->c) != 3) { // EOF?
+    while ((n_arg = scanf("%lf %lf %lf", &eq->a, &eq->b, &eq->c)) != 3) { // EOF?
+        if (n_arg == EOF) {
+            return -1;
+        }
         clear_buf();
         printf(FG_RED);
         printf("Wrong input, try again\n"); // retry
         printf(RESET);
     }
     
+    return 0;
 }
 
 void print_roots(Polynome *eq) {
