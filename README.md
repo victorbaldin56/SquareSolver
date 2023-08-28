@@ -6,7 +6,7 @@ The final program compiled from sources can solve square or linear equation $ax^
 
 ## Building the project
 To build the project, you need to clone this repository to your local directory and build
-with ```make```. To do this, run:
+with make. To do this, run:
 ```
 git clone https://github.com/victorbaldin56/SquareSolver.git
 make
